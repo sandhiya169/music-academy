@@ -2053,6 +2053,9 @@ body.services-page .main-nav__list a.is-active::after {
 .svc-stories__carousel {
   position: relative;
   overflow: hidden;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .svc-stories__track {
