@@ -108,12 +108,12 @@ function initCategoryFilter(reduceMotion){
   if (!filterBar || !grid) return;
 
   const buttons = Array.from(filterBar.querySelectorAll('.b-filter__btn'));
-  const cards = Array.from(grid.querySelectorAll('.b-card'));
   const hasGsap = typeof gsap !== 'undefined';
 
   let currentSearch = '';
 
   function applyFilter(category){
+    const cards = Array.from(grid.querySelectorAll('.b-card'));
     const visibleCards = cards.filter(card => {
       const matchesCategory = category === 'all' || card.dataset.category === category;
       const matchesSearch = !currentSearch || card.textContent.toLowerCase().includes(currentSearch);
@@ -129,7 +129,7 @@ function initCategoryFilter(reduceMotion){
       if (hasGsap && !reduceMotion){
         gsap.fromTo(visibleCards,
           { opacity: 0, y: 18, scale: 0.97 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'power3.out', stagger: 0.05 }
+          { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: 'power3.out', stagger: 0.02 }
         );
       }
     };
@@ -139,9 +139,9 @@ function initCategoryFilter(reduceMotion){
         opacity: 0,
         y: 10,
         scale: 0.97,
-        duration: 0.25,
+        duration: 0.15,
         ease: 'power2.in',
-        stagger: 0.02,
+        stagger: 0.01,
         onComplete: finish
       });
     } else {

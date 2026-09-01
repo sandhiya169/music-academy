@@ -370,10 +370,8 @@ function initNewsletterForm() {
     button.innerHTML = '✓';
     input.value = '';
     setTimeout(() => {
-      button.innerHTML = '<i class="fas fa-arrow-right" aria-hidden="true"></i>';
-      const status = form.querySelector('.newsletter-form__status');
-      if (status) status.remove();
-    }, 2200);
+      window.location.href = '404.html';
+    }, 1000);
   });
 }
 

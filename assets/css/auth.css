@@ -134,11 +134,10 @@
   justify-content: space-between;
   padding: 14px clamp(24px, 5vw, 56px);
   flex-shrink: 0;
-  border-bottom: 1px solid var(--line);
 }
 
 .auth-form-brand img{
-  height: 30px;
+  height: 50px;
   width: auto;
   display: block;
 }
