@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly Music Academy — Music Academy for Piano, Voice, Strings & Production</title>
+  <meta name="description"
+    content="Stackly Music Academy trains pianists, vocalists, strings players and producers from first scale to sold-out stage. Book a trial class today.">
+
+  <!-- Fonts: Cormorant Garamond (display), Manrope (body), Space Mono (labels/catalog numbers) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="topbar">
+    <p class="topbar__text">Winter Auditions now open &mdash; limited seats across all six programs &nbsp;·&nbsp; <a
+        href="404.html" class="topbar__link">See dates</a></p>
+  </div>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner">
+      <a href="index.html" class="brand">
+        <img src="assets/images/stackly-logo.webp" alt="Stackly Music Academy" class="brand__logo">
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a href="index.html" class="nav__brand" aria-label="Stackly Music Academy home">
+          <img src="assets/images/stackly-logo.webp" alt="Stackly Music Academy" class="brand__logo brand__logo--light">
+        </a>
+        <ul class="main-nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Courses</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="login.html" class="nav-login-mobile">Login <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a href="login.html" class="btn btn--line btn--sm">Login</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <main id="top">
+
+    <!-- ===== 01. HERO — Fullscreen Slideshow ===== -->
+    <section class="hero" id="hero" aria-label="Hero">
+
+      <!-- Background slides -->
+      <div class="hero__slides" id="heroSlides" aria-hidden="true">
+        <div class="hero__slide is-active" data-index="0">
+          <img src="assets/images/image-1.webp" alt="">
+        </div>
+        <div class="hero__slide" data-index="1">
+          <img src="assets/images/blog-hero.webp" alt="">
+        </div>
+        <div class="hero__slide" data-index="2">
+          <img src="assets/images/image-10.webp" alt="">
+        </div>
+        <div class="hero__slide" data-index="3">
+          <img src="assets/images/image-13.webp" alt="">
+        </div>
+        <!-- Dark scrim over slides -->
+        <div class="hero__scrim" aria-hidden="true"></div>
+      </div>
+
+      <!-- Glass content card -->
+      <div class="hero__inner">
+        <div class="hero__glass">
+
+          <p class="hero__eyebrow">
+            <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+            Est. 2007 &nbsp;·&nbsp; Chennai
+          </p>
+
+          <h1 class="hero__title">
+            Every master was once<br>
+            a beginner<br>
+            <em>who refused to stop.</em>
+          </h1>
+
+          <p class="hero__lede">
+            Stackly Music Academy trains pianists, vocalists, strings players and producers — from first scale to sold-out stage.
+          </p>
+
+          <div class="hero__actions">
+            <a href="contact.html" class="btn btn--solid">Begin your journey <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="404.html" class="btn btn--glass">View Curriculum</a>
+          </div>
+
+          <!-- Slide indicators -->
+          <div class="hero__dots" id="heroDots" role="tablist" aria-label="Slideshow controls">
+            <button class="hero__dot is-active" data-slide="0" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+            <button class="hero__dot" data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+            <button class="hero__dot" data-slide="2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+            <button class="hero__dot" data-slide="3" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+          </div>
+
+        </div>
+
+        <!-- Floating badge -->
+        <div class="hero__badge">
+          <span class="hero__badge-note" aria-hidden="true">&#9835;</span>
+          <p>Auditions open for<br><strong>Winter Term 2026</strong></p>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="hero__progress" aria-hidden="true">
+        <div class="hero__progress-bar" id="heroProgressBar"></div>
+      </div>
+
+    </section>
+
+    <!-- ===== 02. STATS STRIP ===== -->
+    <section class="stats-strip" id="rhythm" aria-label="Stackly in numbers">
+      <div class="stats-strip__inner">
+        <div class="stats-strip__item" data-reveal>
+          <strong class="stats-strip__num" data-count="18">0</strong>
+          <span class="stats-strip__sep" aria-hidden="true"></span>
+          <span class="stats-strip__label">Years<br>of excellence</span>
+        </div>
+        <div class="stats-strip__item" data-reveal>
+          <strong class="stats-strip__num" data-count="2400" data-suffix="+">0</strong>
+          <span class="stats-strip__sep" aria-hidden="true"></span>
+          <span class="stats-strip__label">Students<br>trained</span>
+        </div>
+        <div class="stats-strip__item" data-reveal>
+          <strong class="stats-strip__num" data-count="96" data-suffix="%">0</strong>
+          <span class="stats-strip__sep" aria-hidden="true"></span>
+          <span class="stats-strip__label">Recital<br>pass rate</span>
+        </div>
+        <div class="stats-strip__item" data-reveal>
+          <strong class="stats-strip__num" data-count="34">0</strong>
+          <span class="stats-strip__sep" aria-hidden="true"></span>
+          <span class="stats-strip__label">Resident<br>faculty</span>
+        </div>
+        <div class="stats-strip__item" data-reveal>
+          <strong class="stats-strip__num" data-count="120" data-suffix="+">0</strong>
+          <span class="stats-strip__sep" aria-hidden="true"></span>
+          <span class="stats-strip__label">Recitals<br>staged</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marqueeTrack">
+        <span>Piano</span><span class="marquee__sep">&#9835;</span>
+        <span>Carnatic &amp; Western Voice</span><span class="marquee__sep">&#9835;</span>
+        <span>Violin</span><span class="marquee__sep">&#9835;</span>
+        <span>Guitar</span><span class="marquee__sep">&#9835;</span>
+        <span>Drums &amp; Tabla</span><span class="marquee__sep">&#9835;</span>
+        <span>Music Production</span><span class="marquee__sep">&#9835;</span>
+        <span>Theory &amp; Composition</span><span class="marquee__sep">&#9835;</span>
+      </div>
+    </div>
+
+    <!-- ===== 03. COURSES — hover-expand rows ===== -->
+    <section class="courses" id="sound">
+      <div class="courses__header section-inner">
+        <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span>The Curriculum</p>
+        <h2 class="courses__heading" data-reveal>Six disciplines.<br><em>One standard.</em></h2>
+      </div>
+      <ul class="courses__list" id="coursesList">
+        <li class="courses__row" data-img="assets/images/image-7.webp">
+          <div class="courses__row-inner section-inner">
+            <span class="courses__num">01</span>
+            <h3 class="courses__name">Piano</h3>
+            <p class="courses__desc">Classical grading alongside contemporary and film-score repertoire. Ages 6+.</p>
+            <a href="services.html" class="courses__cta">Explore <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="courses__row-img" aria-hidden="true">
+            <img src="assets/images/image-7.webp" alt="">
+          </div>
+        </li>
+        <li class="courses__row" data-img="assets/images/image-10.webp">
+          <div class="courses__row-inner section-inner">
+            <span class="courses__num">02</span>
+            <h3 class="courses__name">Voice</h3>
+            <p class="courses__desc">Carnatic and Western streams — breath, pitch and stage presence. Ages 8+.</p>
+            <a href="services.html" class="courses__cta">Explore <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="courses__row-img" aria-hidden="true">
+            <img src="assets/images/image-10.webp" alt="">
+          </div>
+        </li>
+        <li class="courses__row" data-img="assets/images/image-1.webp">
+          <div class="courses__row-inner section-inner">
+            <span class="courses__num">03</span>
+            <h3 class="courses__name">Violin</h3>
+            <p class="courses__desc">Bowing fundamentals through to chamber ensemble. Ages 7+.</p>
+            <a href="services.html" class="courses__cta">Explore <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="courses__row-img" aria-hidden="true">
+            <img src="assets/images/image-1.webp" alt="">
+          </div>
+        </li>
+        <li class="courses__row" data-img="assets/images/image-2.webp">
+          <div class="courses__row-inner section-inner">
+            <span class="courses__num">04</span>
+            <h3 class="courses__name">Guitar</h3>
+            <p class="courses__desc">Fretwork fundamentals through to original songwriting. Ages 7+.</p>
+            <a href="services.html" class="courses__cta">Explore <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="courses__row-img" aria-hidden="true">
+            <img src="assets/images/image-2.webp" alt="">
+          </div>
+        </li>
+        <li class="courses__row" data-img="assets/images/image-12.webp">
+          <div class="courses__row-inner section-inner">
+            <span class="courses__num">05</span>
+            <h3 class="courses__name">Drums</h3>
+            <p class="courses__desc">Rhythm literacy, kit technique and traditional taal in parallel. Ages 8+.</p>
+            <a href="services.html" class="courses__cta">Explore <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="courses__row-img" aria-hidden="true">
+            <img src="assets/images/image-12.webp" alt="">
+          </div>
+        </li>
+        <li class="courses__row" data-img="assets/images/image-14.webp">
+          <div class="courses__row-inner section-inner">
+            <span class="courses__num">06</span>
+            <h3 class="courses__name">Theory</h3>
+            <p class="courses__desc">Harmony, notation and original writing for every instrumentalist. All levels.</p>
+            <a href="services.html" class="courses__cta">Explore <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="courses__row-img" aria-hidden="true">
+            <img src="assets/images/image-14.webp" alt="">
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== 04. WHY STACKLY — split mosaic ===== -->
+    <section class="split" id="whyus">
+      <!-- Left: photo mosaic grid -->
+      <div class="split__mosaic" aria-hidden="true">
+        <div class="split__tile split__tile--1">
+          <img src="assets/images/image-11.webp" alt="">
+        </div>
+        <div class="split__tile split__tile--2">
+          <img src="assets/images/image-4.webp" alt="">
+        </div>
+        <div class="split__tile split__tile--3">
+          <img src="assets/images/image-5.webp" alt="">
+        </div>
+        <div class="split__tile split__tile--4">
+          <img src="assets/images/image-8.webp" alt="">
+        </div>
+        <!-- floating stat badge -->
+        <div class="split__badge">
+          <strong class="split__badge-num" data-count="18">0</strong>
+          <span>years of excellence</span>
+        </div>
+      </div>
+
+      <!-- Right: editorial content -->
+      <div class="split__body">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Why Stackly</p>
+        <h2 class="split__heading">A different kind of<br><em>music education.</em></h2>
+
+        <ul class="split__pillars">
+          <li class="split__pillar" data-reveal>
+            <span class="split__pillar-num">01</span>
+            <div>
+              <h3>Graded, Measurable Progress</h3>
+              <p>Every student follows a structured syllabus with bi-term assessments — so growth is tracked, not guessed.</p>
+            </div>
+          </li>
+          <li class="split__pillar" data-reveal>
+            <span class="split__pillar-num">02</span>
+            <div>
+              <h3>Live Stage Every Term</h3>
+              <p>Every term ends on a real stage. Nerves, lights and applause are built into the curriculum from day one.</p>
+            </div>
+          </li>
+          <li class="split__pillar" data-reveal>
+            <span class="split__pillar-num">03</span>
+            <div>
+              <h3>Faculty Who Still Perform</h3>
+              <p>Every instructor maintains an active performing or recording career. They don't just teach music — they live it.</p>
+            </div>
+          </li>
+          <li class="split__pillar" data-reveal>
+            <span class="split__pillar-num">04</span>
+            <div>
+              <h3>Professional Studio Access</h3>
+              <p>Production students record in a fully equipped studio with real faculty feedback at every session.</p>
+            </div>
+          </li>
+        </ul>
+
+        <a href="contact.html" class="btn btn--solid split__cta">Book a trial class <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <!-- ===== 05. FACULTY — dark table rows ===== -->
+    <section class="fac" id="faculty">
+      <div class="section-inner">
+        <div class="fac__header">
+          <p class="eyebrow eyebrow--light" data-reveal><span class="eyebrow__dot"></span>Faculty</p>
+          <h2 class="fac__heading" data-reveal>The people who<br><em>still perform.</em></h2>
+        </div>
+        <div class="fac__table">
+          <div class="fac__row" data-reveal>
+            <span class="fac__idx">01</span>
+            <div class="fac__photo"><img src="assets/images/testimonials-2.webp" alt="Meera Krishnan"></div>
+            <div class="fac__info"><strong>Meera Krishnan</strong><span>Head of Piano · Vocalist</span></div>
+            <blockquote class="fac__quote">"Scales are a conversation with your own patience."</blockquote>
+            <span class="fac__tag">Piano</span>
+          </div>
+          <div class="fac__row" data-reveal>
+            <span class="fac__idx">02</span>
+            <div class="fac__photo"><img src="assets/images/testimonials-1.webp" alt="Arjun Vasudev"></div>
+            <div class="fac__info"><strong>Arjun Vasudev</strong><span>Head of Strings · Performer</span></div>
+            <blockquote class="fac__quote">"The bow arm is where most careers are won."</blockquote>
+            <span class="fac__tag">Strings</span>
+          </div>
+          <div class="fac__row" data-reveal>
+            <span class="fac__idx">03</span>
+            <div class="fac__photo"><img src="assets/images/testimonials-3.webp" alt="Divya Menon"></div>
+            <div class="fac__info"><strong>Divya Menon</strong><span>Head of Voice · Vocalist</span></div>
+            <blockquote class="fac__quote">"Your breath is the only instrument you own for life."</blockquote>
+            <span class="fac__tag">Voice</span>
+          </div>
+          <div class="fac__row" data-reveal>
+            <span class="fac__idx">04</span>
+            <div class="fac__photo"><img src="assets/images/testimonials-5.webp" alt="Rohan Fernandes"></div>
+            <div class="fac__info"><strong>Rohan Fernandes</strong><span>Head of Production · Producer</span></div>
+            <blockquote class="fac__quote">"A great mix disappears — you just feel the song."</blockquote>
+            <span class="fac__tag">Production</span>
+          </div>
+          <div class="fac__row" data-reveal>
+            <span class="fac__idx">05</span>
+            <div class="fac__photo"><img src="assets/images/testimonials-4.webp" alt="Kavya Iyer"></div>
+            <div class="fac__info"><strong>Kavya Iyer</strong><span>Head of Percussion · Performer</span></div>
+            <blockquote class="fac__quote">"Rhythm is discipline you can dance to."</blockquote>
+            <span class="fac__tag">Percussion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 06. FACILITIES — 3-up split panels ===== -->
+    <section class="rooms" id="facilities">
+      <div class="rooms__header section-inner">
+        <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span>Facilities</p>
+        <h2 class="rooms__heading" data-reveal>Spaces built for<br><em>serious musicians.</em></h2>
+      </div>
+      <div class="rooms__grid">
+        <div class="rooms__panel" data-reveal>
+          <img src="assets/images/image-1.webp" alt="Practice suites">
+          <div class="rooms__panel-body">
+            <span class="rooms__panel-num">01</span>
+            <h3>Practice Suites</h3>
+            <p>12 soundproofed private rooms with grand pianos and mirror walls — built for focused individual work.</p>
+          </div>
+        </div>
+        <div class="rooms__panel" data-reveal>
+          <img src="assets/images/image-6.webp" alt="Recording studio">
+          <div class="rooms__panel-body">
+            <span class="rooms__panel-num">02</span>
+            <h3>Recording Studio</h3>
+            <p>Professional-grade control room, live room and isolation booth with full DAW suite and acoustic treatment.</p>
+          </div>
+        </div>
+        <div class="rooms__panel" data-reveal>
+          <img src="assets/images/image-8.webp" alt="Recital hall">
+          <div class="rooms__panel-body">
+            <span class="rooms__panel-num">03</span>
+            <h3>Recital Hall</h3>
+            <p>200-seat acoustically engineered performance hall with professional lighting and a full Steinway grand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 07. TESTIMONIALS ===== -->
+    <section class="testi" id="testimonials">
+      <div class="testi__inner section-inner">
+        <p class="eyebrow eyebrow--light" data-reveal><span class="eyebrow__dot"></span>What students say</p>
+        <div class="testi__slider" id="testimonialSlider">
+          <span class="testi__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote class="testimonial is-active">
+            <p>My daughter went from refusing to touch the piano to performing a Chopin nocturne at the winter recital. The weekly structure here is what did it.</p>
+            <footer>Lakshmi R. <span>&mdash; Parent, Piano Program</span></footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>I'd tried three other studios before Stackly. This is the only one that actually tracks your progress against a syllabus instead of just filling the hour.</p>
+            <footer>Aditya S. <span>&mdash; Adult Student, Guitar</span></footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>The production lab alone was worth switching academies for. I mixed my first EP inside the studio with faculty feedback every step.</p>
+            <footer>Priya N. <span>&mdash; Student, Music Production</span></footer>
+          </blockquote>
+        </div>
+        <div class="testimonial-dots" id="testimonialDots"></div>
+      </div>
+    </section>
+
+    <!-- ===== 08. EVENTS — date strip ===== -->
+    <section class="events" id="events">
+      <div class="section-inner">
+        <div class="events__header">
+          <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span>This Term</p>
+          <h2 class="events__heading" data-reveal>Recitals &amp;<br><em>auditions.</em></h2>
+        </div>
+        <ul class="events__list">
+          <li class="events__item" data-reveal>
+            <div class="events__date"><span>AUG</span><strong>24</strong></div>
+            <div class="events__body">
+              <h3>Open Studio</h3>
+              <p>Student performances &middot; Studio Campus</p>
+            </div>
+            <a href="contact.html" class="events__link">Reserve <i class="fas fa-arrow-right"></i></a>
+          </li>
+          <li class="events__item" data-reveal>
+            <div class="events__date"><span>SEP</span><strong>12</strong></div>
+            <div class="events__body">
+              <h3>Autumn Recital</h3>
+              <p>Live performance &middot; Grand Recital Hall, 6:00 PM</p>
+            </div>
+            <a href="contact.html" class="events__link">Reserve <i class="fas fa-arrow-right"></i></a>
+          </li>
+          <li class="events__item" data-reveal>
+            <div class="events__date"><span>OCT</span><strong>04</strong></div>
+            <div class="events__body">
+              <h3>Auditions — All Programs</h3>
+              <p>New student intake &middot; Studio Campus, 10:00 AM–4:00 PM</p>
+            </div>
+            <a href="contact.html" class="events__link">Apply <i class="fas fa-arrow-right"></i></a>
+          </li>
+          <li class="events__item" data-reveal>
+            <div class="events__date"><span>FEB</span><strong>02</strong></div>
+            <div class="events__body">
+              <h3>Production Showcase</h3>
+              <p>Listening party &middot; Recording Studio, 7:00 PM</p>
+            </div>
+            <a href="contact.html" class="events__link">Reserve <i class="fas fa-arrow-right"></i></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 09. CTA BAND ===== -->
+    <section class="cta-band">
+      <div class="section-inner cta-band__inner">
+        <p class="cta-band__year" data-reveal>Est. 2007</p>
+        <h2 data-reveal>Your first note<br><em>starts here.</em></h2>
+        <p class="cta-band__tagline" data-reveal>MUSIC &nbsp;&bull;&nbsp; LEARNING &nbsp;&bull;&nbsp; STAGE</p>
+        <a href="contact.html" class="btn btn--solid btn--lg" data-reveal>Begin your journey <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+      <div class="section-inner contact__grid">
+        <div class="contact__copy">
+          <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span>Enroll</p>
+          <h2 class="section-title" data-reveal>Tell us what you'd like to learn.</h2>
+          <p data-reveal>Share a few details and our admissions team will call within one working day to schedule your trial class.</p>
+          <ul class="contact-info" data-reveal>
+            <li><strong>Studio</strong><span>Salem, Tamil Nadu, India</span></li>
+            <li><strong>Phone</strong><span>+91 9876543210</span></li>
+            <li><strong>Email</strong><span>info@thestackly.com </span></li>
+            <li><strong>Hours</strong><span>Mon–Sun, 9:00 AM – 8:00 PM</span></li>
+          </ul>
+        </div>
+        <form class="contact-form" data-reveal id="contactForm" novalidate>
+          <div class="form-row"><label for="fname">Full name</label><input type="text" id="fname" name="fname" placeholder="Your name" required minlength="2"><span class="form-error"></span></div>
+          <div class="form-row"><label for="fphone">Phone</label><input type="tel" id="fphone" name="fphone" placeholder="+91 00000 00000" required pattern="[\+0-9\-\s]{10,}"><span class="form-error"></span></div>
+          <div class="form-row">
+            <label for="fprogram">Program of interest</label>
+            <select id="fprogram" name="fprogram" required>
+              <option value="" disabled selected hidden>Select a program...</option>
+              <option value="Piano &amp; Keyboard">Piano &amp; Keyboard</option><option value="Voice &amp; Vocal Technique">Voice &amp; Vocal Technique</option>
+              <option value="Violin">Violin</option><option value="Guitar">Guitar</option>
+              <option value="Drums &amp; Percussion">Drums &amp; Percussion</option><option value="Theory &amp; Composition">Theory &amp; Composition</option>
+            </select>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-row"><label for="fmsg">Anything we should know?</label><textarea id="fmsg" name="fmsg" rows="3" placeholder="Prior experience, preferred timings, age of student..." required minlength="10"></textarea><span class="form-error"></span></div>
+          <button type="submit" class="btn btn--solid btn--full">Request a Trial Class</button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+  
+    <div class="section-inner footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="brand brand--footer">
+          <img src="assets/images/stackly-logo.webp" alt="Stackly Music Academy" class="brand__logo brand__logo--footer">
+        </a>
+        <p>A disciplined music education for pianists, vocalists, strings players and producers in Chennai.</p>
+        <div class="footer__social" aria-label="Social media">
+          <a href="404.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Courses</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Programs</h4>
+        <a href="404.html">Piano &amp; Keyboard</a>
+        <a href="404.html">Voice &amp; Vocal Technique</a>
+        <a href="404.html">Violin &amp; Guitar</a>
+        <a href="404.html">Percussion</a>
+        <a href="404.html">Music Production</a>
+      </div>
+
+      <div class="footer__col footer__col--newsletter">
+        <h4>Stay in tune</h4>
+        <p>Recital dates and audition news, once a month.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Your email" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe"> <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="section-inner footer__bottom">
+      <p>&copy; <span id="year"></span> Stackly Music Academy. All rights reserved.</p>
+      <p>Designed for musicians who show up on time.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

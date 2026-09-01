@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account — Cadence Conservatory</title>
+<meta name="description" content="Create your Cadence Conservatory student account.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body class="auth-body">
+
+<div class="auth-shell">
+
+  <!-- ===== Left: editorial brand panel ===== -->
+  <aside class="auth-panel">
+    <div class="auth-panel__inner">
+    <div class="auth-panel__staff" aria-hidden="true">
+      <!-- <svg viewBox="0 0 400 700" preserveAspectRatio="none">
+        <line x1="0" y1="140" x2="400" y2="140"></line>
+        <line x1="0" y1="170" x2="400" y2="170"></line>
+        <line x1="0" y1="200" x2="400" y2="200"></line>
+        <circle cx="90" cy="140" r="4"></circle>
+        <circle cx="240" cy="170" r="4"></circle>
+        <circle cx="340" cy="200" r="4"></circle>
+        <line x1="0" y1="540" x2="400" y2="540"></line>
+        <line x1="0" y1="570" x2="400" y2="570"></line>
+        <line x1="0" y1="600" x2="400" y2="600"></line>
+        <circle cx="150" cy="540" r="4"></circle>
+        <circle cx="300" cy="600" r="4"></circle>
+      </svg> -->
+    </div>
+
+    <div class="auth-panel__top"></div>
+
+    <div class="auth-panel__quote">
+      <p class="eyebrow"><span class="eyebrow__dot"></span>Join the Studio</p>
+      <h2>Every recital<br>starts with <em>one signup.</em></h2>
+      <p>Create an account to book trial classes, track your progress and see your recital dates in one place.</p>
+    </div>
+
+    <div class="auth-panel__stats">
+      <div><strong>96%</strong><span>Recital pass rate</span></div>
+      <div><strong>6</strong><span>Core disciplines</span></div>
+      <div><strong>120+</strong><span>Recitals staged</span></div>
+    </div>
+    </div><!-- /auth-panel__inner -->
+  </aside>
+
+  <!-- ===== Right: form ===== -->
+  <div class="auth-form-wrap">
+    <div class="auth-form-topbar">
+      <a href="index.html" class="auth-form-brand">
+        <img src="assets/images/stackly-logo.webp" alt="Stackly Music Academy">
+      </a>
+      <a href="index.html" class="auth-back-btn">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <span>Back to Home</span>
+      </a>
+    </div>
+    <div class="auth-card-outer">
+    <div class="auth-card">
+      <div class="auth-card__head">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Create Account</p>
+        <h1>Begin your <em>first note.</em></h1>
+        <p>Already have an account? <a href="login.html">Sign in</a></p>
+      </div>
+
+      <form class="auth-form" id="signupForm" data-active-role="student" novalidate>
+        <div class="auth-roles" role="tablist" aria-label="Sign up as">
+          <button type="button" class="auth-roles__btn is-active" data-role="student" data-form="signupForm" role="tab" aria-selected="true">Student</button>
+          <button type="button" class="auth-roles__btn" data-role="admin" data-form="signupForm" role="tab" aria-selected="false">Admin</button>
+        </div>
+        <div class="form-row">
+          <label for="signupName">Full name</label>
+          <input type="text" id="signupName" name="signupName" placeholder="Your name" required>
+          <span class="auth-error" id="signupNameError"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="signupEmail">Email address</label>
+          <input type="email" id="signupEmail" name="signupEmail" placeholder="you@example.com" required>
+          <span class="auth-error" id="signupEmailError"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="signupPhone">Phone</label>
+          <input type="tel" id="signupPhone" name="signupPhone" placeholder="+91 00000 00000" required inputmode="numeric" maxlength="10">
+          <span class="auth-error" id="signupPhoneError"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" name="signupPassword" placeholder="At least 8 characters" required>
+          <button type="button" class="auth-field-toggle" data-toggle-password="signupPassword">Show</button>
+          <span class="auth-error" id="signupPasswordError"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="signupConfirm">Confirm password</label>
+          <input type="password" id="signupConfirm" name="signupConfirm" placeholder="Re-enter your password" required>
+          <button type="button" class="auth-field-toggle" data-toggle-password="signupConfirm">Show</button>
+          <span class="auth-error" id="signupConfirmError"></span>
+        </div>
+
+        <label class="auth-check">
+          <input type="checkbox" id="signupTerms" name="signupTerms">
+          <span>I agree to the <a href="404.html">Terms of Enrollment</a> and <a href="404.html">Privacy Policy</a></span>
+        </label>
+        <span class="auth-error" id="signupTermsError" style="display:block; margin-top:-14px; margin-bottom: 14px;"></span>
+
+        <button type="submit" class="btn btn--solid btn--full" id="signupSubmitBtn">Create Student Account</button>
+        <p class="auth-submit-note" id="signupNote" role="status" aria-live="polite"></p>
+      </form>
+
+
+    </div><!-- /auth-card -->
+    </div><!-- /auth-card-outer -->
+  </div><!-- /auth-form-wrap -->
+</div><!-- /auth-shell -->
+
+<script src="assets/js/auth.js"></script>
+</body>
+</html>

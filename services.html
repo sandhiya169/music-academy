@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs & Curriculum — Stackly Music Academy</title>
+  <meta name="description"
+    content="Explore Stackly Music Academy's programs: Piano, Vocal Arts, Strings, and Music Production. See pricing, process, and curriculum.">
+
+  <!-- Fonts: Cormorant Garamond (display), Manrope (body), Space Mono (labels/catalog numbers) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/services.css">
+
+  <!-- AOS (scroll reveal) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+
+<body class="services-page">
+
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="topbar">
+    <p class="topbar__text">Winter Masterclasses now open &mdash; limited seats across all programs &nbsp;·&nbsp; <a
+        href="#pricing" class="topbar__link">See pricing</a></p>
+  </div>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner">
+      <a href="index.html" class="brand">
+        <img src="assets/images/stackly-logo.webp" alt="Stackly Music Academy" class="brand__logo">
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a href="index.html" class="nav__brand" aria-label="Stackly Music Academy home">
+          <img src="assets/images/stackly-logo.webp" alt="Stackly Music Academy" class="brand__logo brand__logo--light">
+        </a>
+        <ul class="main-nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="is-active" aria-current="page">Courses</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="login.html" class="nav-login-mobile">Login <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a href="login.html" class="btn btn--line btn--sm">Login</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <main id="top">
+
+    <!-- ===== 01. SERVICES HERO (Atmospheric) ===== -->
+    <section class="svc-hero page-hero" id="hero">
+      <img src="assets/images/image-15.webp"
+        alt="Concert hall" class="page-hero__bg">
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__particles" aria-hidden="true">
+        <span>&#9834;</span><span>&#9835;</span><span>&#9836;</span>
+        <span>&#9834;</span><span>&#9835;</span><span>&#9833;</span>
+      </div>
+      <div class="page-hero__inner svc-hero__inner">
+        <div class="page-hero__card svc-hero__card">
+          <p class="eyebrow svc-breadcrumb"><span class="eyebrow__dot"></span>Our Programs</p>
+          <h1 class="page-hero__title" id="svcHeroTitle">Every discipline.<br>One standard <em>of craft.</em></h1>
+          <p class="svc-hero__lede page-hero__lede">From a child's first scale to a producer's first mix — structured
+            programs, graded faculty, and a stage waiting at the end.</p>
+          <ul class="svc-hero__facts">
+            <li><strong>6</strong><span>Disciplines taught</span></li>
+            <li><strong>14</strong><span>Resident faculty</span></li>
+            <li><strong>500+</strong><span>Students enrolled</span></li>
+          </ul>
+          <div class="svc-hero__actions page-hero__actions">
+            <a href="404.html" class="btn btn--solid">View Pricing <i class="fas fa-arrow-right"
+                aria-hidden="true"></i></a>
+            <a href="404.html" class="btn btn--ghost">Explore Curriculum</a>
+          </div>
+        </div>
+        <div class="page-hero__visual svc-hero__visual" data-aos="fade-left" data-aos-delay="200">
+          <div class="svc-disc" id="svcDisc">
+            <span class="svc-disc__label">Harmonia<br>Sessions</span>
+          </div>
+          <span class="svc-note svc-note--1" aria-hidden="true">&#9834;</span>
+          <span class="svc-note svc-note--2" aria-hidden="true">&#9835;</span>
+          <span class="svc-note svc-note--3" aria-hidden="true">&#9836;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 02. PROGRAMS — Spotlight split ===== -->
+    <section class="svc-offer" id="programs">
+      <div class="section-inner svc-offer__layout">
+
+        <!-- Sticky left panel -->
+        <div class="svc-offer__side">
+          <div class="svc-offer__label">
+            <span class="eyebrow__dot"></span>
+            <span class="eyebrow__text">What We Teach</span>
+          </div>
+          <h2 class="svc-offer__title">Master your<br><em>instrument.</em></h2>
+          <p class="svc-offer__sub">Six disciplines, one standard. Find the program built for where you are right now.
+          </p>
+          <a href="contact.html" class="svc-offer__cta">
+            Book a trial <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+          <!-- Rotating discipline count -->
+          <div class="svc-offer__count" aria-hidden="true">
+            <span class="svc-offer__count-num">06</span>
+            <span class="svc-offer__count-label">Disciplines</span>
+          </div>
+        </div>
+
+        <!-- Right: discipline list -->
+        <div class="svc-offer__list">
+
+          <a href="contact.html" class="svc-item svc-item--piano" data-aos="fade-up" data-aos-delay="0">
+            <div class="svc-item__top">
+              <span class="svc-item__num">01</span>
+              <span class="svc-item__genre">Classical · Contemporary</span>
+              <span class="svc-item__age">Ages 6+</span>
+            </div>
+            <div class="svc-item__body">
+              <span class="svc-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 44 44">
+                  <rect x="6" y="10" width="32" height="24" rx="2" fill="none" stroke="currentColor"
+                    stroke-width="1.4" />
+                  <line x1="15" y1="10" x2="15" y2="34" stroke="currentColor" stroke-width="1.2" />
+                  <line x1="22" y1="10" x2="22" y2="34" stroke="currentColor" stroke-width="1.2" />
+                  <line x1="29" y1="10" x2="29" y2="34" stroke="currentColor" stroke-width="1.2" />
+                </svg>
+              </span>
+              <h3 class="svc-item__name">Piano &amp; Keyboard</h3>
+              <p class="svc-item__desc">Classical grading alongside contemporary and film-score repertoire, from first
+                scale to sonata.</p>
+            </div>
+            <div class="svc-item__bar"></div>
+          </a>
+
+          <a href="contact.html" class="svc-item svc-item--vocal" data-aos="fade-up" data-aos-delay="60">
+            <div class="svc-item__top">
+              <span class="svc-item__num">02</span>
+              <span class="svc-item__genre">Jazz · Western · Classical</span>
+              <span class="svc-item__age">Ages 8+</span>
+            </div>
+            <div class="svc-item__body">
+              <span class="svc-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 44 44">
+                  <rect x="17" y="6" width="10" height="18" rx="5" fill="none" stroke="currentColor"
+                    stroke-width="1.4" />
+                  <path d="M12 21c0 6 4.5 10 10 10s10-4 10-10" fill="none" stroke="currentColor" stroke-width="1.4" />
+                  <line x1="22" y1="31" x2="22" y2="38" stroke="currentColor" stroke-width="1.4" />
+                  <line x1="15" y1="38" x2="29" y2="38" stroke="currentColor" stroke-width="1.4" />
+                </svg>
+              </span>
+              <h3 class="svc-item__name">Vocal Arts</h3>
+              <p class="svc-item__desc">Classical, Jazz and Western streams — breath control, pitch accuracy, and stage
+                presence.</p>
+            </div>
+            <div class="svc-item__bar"></div>
+          </a>
+
+          <a href="contact.html" class="svc-item svc-item--strings" data-aos="fade-up" data-aos-delay="120">
+            <div class="svc-item__top">
+              <span class="svc-item__num">03</span>
+              <span class="svc-item__genre">Chamber · Orchestral</span>
+              <span class="svc-item__age">Ages 7+</span>
+            </div>
+            <div class="svc-item__body">
+              <span class="svc-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 44 44">
+                  <path d="M14 8l16 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                  <circle cx="13" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.4" />
+                  <path d="M22 26c3 3 3 8-1 10s-8-1-8-5 2-6 5-6" fill="none" stroke="currentColor" stroke-width="1.4" />
+                  <circle cx="30" cy="30" r="4" fill="none" stroke="currentColor" stroke-width="1.4" />
+                </svg>
+              </span>
+              <h3 class="svc-item__name">Strings &amp; Ensembles</h3>
+              <p class="svc-item__desc">Bowing and fretwork fundamentals through to chamber ensemble and orchestral
+                performances.</p>
+            </div>
+            <div class="svc-item__bar"></div>
+          </a>
+
+          <a href="contact.html" class="svc-item svc-item--production" data-aos="fade-up" data-aos-delay="180">
+            <div class="svc-item__top">
+              <span class="svc-item__num">04</span>
+              <span class="svc-item__genre">Studio · Digital</span>
+              <span class="svc-item__age">Ages 14+</span>
+            </div>
+            <div class="svc-item__body">
+              <span class="svc-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 44 44">
+                  <path d="M6 24h4l3-9 4 18 4-24 4 22 3-11h6" fill="none" stroke="currentColor" stroke-width="1.4"
+                    stroke-linejoin="round" stroke-linecap="round" />
+                </svg>
+              </span>
+              <h3 class="svc-item__name">Music Production</h3>
+              <p class="svc-item__desc">Recording, mixing and arrangement inside a full production studio, from demo to
+                master.</p>
+            </div>
+            <div class="svc-item__bar"></div>
+          </a>
+
+          <a href="contact.html" class="svc-item svc-item--theory" data-aos="fade-up" data-aos-delay="240">
+            <div class="svc-item__top">
+              <span class="svc-item__num">05</span>
+              <span class="svc-item__genre">Harmony · Notation</span>
+              <span class="svc-item__age">All levels</span>
+            </div>
+            <div class="svc-item__body">
+              <span class="svc-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 44 44">
+                  <path d="M22 12c-3-3-9-3-13-1v22c4-2 10-2 13 1 3-3 9-3 13-1V11c-4-2-10-2-13 1z" fill="none"
+                    stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+                  <line x1="22" y1="12" x2="22" y2="34" stroke="currentColor" stroke-width="1.2" />
+                </svg>
+              </span>
+              <h3 class="svc-item__name">Theory &amp; Composition</h3>
+              <p class="svc-item__desc">Harmony, notation and original writing — the shared vocabulary behind every
+                discipline.</p>
+            </div>
+            <div class="svc-item__bar"></div>
+          </a>
+
+          <a href="contact.html" class="svc-item svc-item--master" data-aos="fade-up" data-aos-delay="300">
+            <div class="svc-item__top">
+              <span class="svc-item__num">06</span>
+              <span class="svc-item__genre">Advanced · Intensive</span>
+              <span class="svc-item__age">Advanced</span>
+            </div>
+            <div class="svc-item__body">
+              <span class="svc-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 44 44">
+                  <circle cx="22" cy="22" r="14" fill="none" stroke="currentColor" stroke-width="1.4" />
+                  <circle cx="22" cy="22" r="6" fill="none" stroke="currentColor" stroke-width="1.4" />
+                  <line x1="22" y1="16" x2="22" y2="8" stroke="currentColor" stroke-width="1.4" />
+                </svg>
+              </span>
+              <h3 class="svc-item__name">Masterclasses</h3>
+              <p class="svc-item__desc">Exclusive, intensive sessions with visiting maestros — advanced repertoire and
+                technique.</p>
+            </div>
+            <div class="svc-item__bar"></div>
+          </a>
+
+        </div><!-- /svc-offer__list -->
+      </div>
+    </section>
+
+    <!-- ===== 03. CURRICULUM EXPLORER — Tab Stage Layout ===== -->
+    <section class="svc-curriculum" id="curriculum">
+      <div class="svc-curriculum__inner">
+
+        <div class="svc-curriculum__header" data-aos="fade-up">
+          <p class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span>Interactive Curriculum</p>
+          <h2 class="svc-curriculum__title">See the <em>process.</em></h2>
+          <p class="svc-curriculum__sub">Experience a glimpse into our masterclasses and daily practices.</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="svc-cur-tabs" role="tablist" aria-label="Curriculum modules" data-aos="fade-up"
+          data-aos-delay="100">
+          <button class="svc-cur-tab is-active" role="tab" aria-selected="true" aria-controls="cur-panel-0"
+            data-index="0">
+            <span class="svc-cur-tab__num">01</span>
+            <span class="svc-cur-tab__label">Hand Posture &amp; Scales</span>
+          </button>
+          <button class="svc-cur-tab" role="tab" aria-selected="false" aria-controls="cur-panel-1" data-index="1">
+            <span class="svc-cur-tab__num">02</span>
+            <span class="svc-cur-tab__label">Vocal Warmups &amp; Breath</span>
+          </button>
+          <button class="svc-cur-tab" role="tab" aria-selected="false" aria-controls="cur-panel-2" data-index="2">
+            <span class="svc-cur-tab__num">03</span>
+            <span class="svc-cur-tab__label">Chamber Rehearsal</span>
+          </button>
+          <button class="svc-cur-tab" role="tab" aria-selected="false" aria-controls="cur-panel-3" data-index="3">
+            <span class="svc-cur-tab__num">04</span>
+            <span class="svc-cur-tab__label">Studio Mixing Basics</span>
+          </button>
+        </div>
+
+        <!-- Tab Panels -->
+        <div class="svc-cur-stage" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="svc-cur-panel is-active" id="cur-panel-0" role="tabpanel">
+            <div class="svc-cur-panel__img">
+              <img src="assets/images/image-13.webp"
+                alt="Piano hand posture session">
+              <div class="svc-cur-panel__overlay">
+                <a href="404.html" class="svc-cur-play" aria-label="Play video">
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </a>
+              </div>
+              <div class="svc-cur-panel__chip"><i class="fas fa-music" aria-hidden="true"></i> Piano Program</div>
+            </div>
+            <div class="svc-cur-panel__text">
+              <h3>Hand Posture &amp; Scales</h3>
+              <p>The foundation of all our piano programs, ensuring injury-free play and long-term dexterity. Students
+                build muscle memory through structured daily scale routines before advancing to repertoire.</p>
+              <ul class="svc-cur-panel__points">
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Wrist &amp; arm alignment</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Major &amp; minor scale fluency</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Sight-reading introduction</li>
+              </ul>
+              <a href="contact.html" class="svc-cur-panel__btn">Book a trial lesson <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="svc-cur-panel" id="cur-panel-1" role="tabpanel" hidden>
+            <div class="svc-cur-panel__img">
+              <img src="assets/images/image-9.webp"
+                alt="Vocal warmup session">
+              <div class="svc-cur-panel__overlay">
+                <a href="404.html" class="svc-cur-play" aria-label="Play video">
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </a>
+              </div>
+              <div class="svc-cur-panel__chip"><i class="fas fa-microphone" aria-hidden="true"></i> Vocal Arts</div>
+            </div>
+            <div class="svc-cur-panel__text">
+              <h3>Vocal Warmups &amp; Breath</h3>
+              <p>Mastering the diaphragm to support sustained notes without straining vocal cords. Every session begins
+                with a structured 15-minute warmup protocol tailored to the student's voice type.</p>
+              <ul class="svc-cur-panel__points">
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Diaphragmatic breathing</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Resonance placement</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Register &amp; passaggio</li>
+              </ul>
+              <a href="contact.html" class="svc-cur-panel__btn">Book a trial lesson <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="svc-cur-panel" id="cur-panel-2" role="tabpanel" hidden>
+            <div class="svc-cur-panel__img">
+              <img src="assets/images/image-3.webp"
+                alt="Chamber ensemble rehearsal">
+              <div class="svc-cur-panel__overlay">
+                <a href="404.html" class="svc-cur-play" aria-label="Play video">
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </a>
+              </div>
+              <div class="svc-cur-panel__chip"><i class="fas fa-users" aria-hidden="true"></i> Ensemble</div>
+            </div>
+            <div class="svc-cur-panel__text">
+              <h3>Chamber Ensemble Rehearsal</h3>
+              <p>Learning to listen and synchronize within a quartet environment. Students discover ensemble dynamics,
+                balance, and how individual parts serve the collective musical statement.</p>
+              <ul class="svc-cur-panel__points">
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Intonation &amp; blend</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Score reading &amp; cues</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Performance preparation</li>
+              </ul>
+              <a href="contact.html" class="svc-cur-panel__btn">Book a trial lesson <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="svc-cur-panel" id="cur-panel-3" role="tabpanel" hidden>
+            <div class="svc-cur-panel__img">
+              <img src="assets/images/image-10.webp"
+                alt="Studio mixing session">
+              <div class="svc-cur-panel__overlay">
+                <a href="404.html" class="svc-cur-play" aria-label="Play video">
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </a>
+              </div>
+              <div class="svc-cur-panel__chip"><i class="fas fa-sliders-h" aria-hidden="true"></i> Production</div>
+            </div>
+            <div class="svc-cur-panel__text">
+              <h3>Studio Mixing Basics</h3>
+              <p>An introduction to EQ, compression, and spatial awareness in the control room. Students work on real
+                project files in our industry-standard DAW environment from day one.</p>
+              <ul class="svc-cur-panel__points">
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> EQ &amp; frequency balance</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Dynamic compression</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Reverb &amp; stereo field</li>
+              </ul>
+              <a href="contact.html" class="svc-cur-panel__btn">Book a trial lesson <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div><!-- /svc-cur-stage -->
+
+        <!-- Progress bar -->
+        <div class="svc-cur-progress" aria-hidden="true">
+          <div class="svc-cur-progress__fill" id="curProgressFill" style="width:25%"></div>
+        </div>
+
+      </div><!-- /svc-curriculum__inner -->
+    </section>
+
+    <!-- ===== 04. PRICING — Dark Glassmorphism ===== -->
+    <section class="svc-pricing" id="pricing">
+      <div class="svc-pricing__bg" aria-hidden="true">
+        <div class="svc-pricing__orb svc-pricing__orb--1"></div>
+        <div class="svc-pricing__orb svc-pricing__orb--2"></div>
+      </div>
+
+      <div class="section-inner">
+        <div class="svc-pricing__head" data-aos="fade-up">
+          <p class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span>Membership</p>
+          <h2 class="svc-pricing__title">Pricing built <em>around commitment.</em></h2>
+          <p class="svc-pricing__sub">Every tier includes grading prep and one complimentary recital slot per year.</p>
+
+          <!-- Billing toggle -->
+          <div class="svc-billing-toggle" role="group" aria-label="Billing period">
+            <span class="svc-billing-toggle__label" id="label-monthly">Monthly</span>
+            <button class="svc-billing-switch" id="billingSwitch" aria-pressed="false"
+              aria-labelledby="label-monthly label-annual">
+              <span class="svc-billing-switch__thumb"></span>
+            </button>
+            <span class="svc-billing-toggle__label" id="label-annual">Annual <em class="svc-billing-save">Save
+                15%</em></span>
+          </div>
+        </div>
+
+        <div class="svc-pricing__grid">
+
+          <div class="svc-plan">
+            <div class="svc-plan__glow"></div>
+            <div class="svc-plan__inner">
+              <div class="svc-plan__tier">Foundation</div>
+              <p class="svc-plan__tag">For first-time learners</p>
+              <div class="svc-plan__price-wrap">
+                <p class="svc-plan__price">
+                  <span class="svc-plan__currency">$</span>
+                  <span class="svc-plan__amount" data-monthly="120" data-annual="102">120</span>
+                  <span class="svc-plan__period">/month</span>
+                </p>
+                <p class="svc-plan__annual-note" aria-live="polite"></p>
+              </div>
+              <ul class="svc-plan__features">
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>1 weekly 45-min
+                  lesson</li>
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>Termly progress
+                  report</li>
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>Access to Open
+                  Studio events</li>
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>1 discipline of
+                  choice</li>
+                <li class="svc-plan__feat--off"><span class="svc-plan__tick svc-plan__tick--off"><i class="fas fa-times"
+                      aria-hidden="true"></i></span>Exam &amp; grading prep</li>
+                <li class="svc-plan__feat--off"><span class="svc-plan__tick svc-plan__tick--off"><i class="fas fa-times"
+                      aria-hidden="true"></i></span>Studio practice access</li>
+              </ul>
+              <a href="contact.html" class="svc-plan__btn svc-plan__btn--outline">Choose Foundation</a>
+            </div>
+          </div>
+
+          <div class="svc-plan svc-plan--featured" id="svcPopularPlan">
+            <div class="svc-plan__glow svc-plan__glow--featured"></div>
+            <div class="svc-plan__inner">
+              <div class="svc-plan__badge">Most Popular</div>
+              <div class="svc-plan__tier">Progressive</div>
+              <p class="svc-plan__tag">For students on a grading track</p>
+              <div class="svc-plan__price-wrap">
+                <p class="svc-plan__price">
+                  <span class="svc-plan__currency">$</span>
+                  <span class="svc-plan__amount" data-monthly="200" data-annual="170">200</span>
+                  <span class="svc-plan__period">/month</span>
+                </p>
+                <p class="svc-plan__annual-note" aria-live="polite"></p>
+              </div>
+              <ul class="svc-plan__features">
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>2 weekly 45-min
+                  lessons</li>
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>Monthly faculty
+                  review</li>
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>Priority recital
+                  placement</li>
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>4 hrs studio
+                  practice time</li>
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>Exam &amp;
+                  grading prep included</li>
+                <li class="svc-plan__feat--off"><span class="svc-plan__tick svc-plan__tick--off"><i class="fas fa-times"
+                      aria-hidden="true"></i></span>Solo recital slot</li>
+              </ul>
+              <a href="contact.html" class="svc-plan__btn svc-plan__btn--solid">Choose Progressive</a>
+            </div>
+          </div>
+
+          <div class="svc-plan">
+            <div class="svc-plan__glow"></div>
+            <div class="svc-plan__inner">
+              <div class="svc-plan__tier">Artist Intensive</div>
+              <p class="svc-plan__tag">For pre-professional students</p>
+              <div class="svc-plan__price-wrap">
+                <p class="svc-plan__price">
+                  <span class="svc-plan__currency">$</span>
+                  <span class="svc-plan__amount" data-monthly="350" data-annual="298">350</span>
+                  <span class="svc-plan__period">/month</span>
+                </p>
+                <p class="svc-plan__annual-note" aria-live="polite"></p>
+              </div>
+              <ul class="svc-plan__features">
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>3 weekly 60-min
+                  lessons</li>
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>1-on-1 mentorship
+                  with faculty head</li>
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>Unlimited studio
+                  &amp; recording time</li>
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>Solo recital slot
+                  each term</li>
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>Portfolio &amp;
+                  audition coaching</li>
+                <li><span class="svc-plan__tick"><i class="fas fa-check" aria-hidden="true"></i></span>Exam &amp;
+                  grading prep included</li>
+              </ul>
+              <a href="contact.html" class="svc-plan__btn svc-plan__btn--outline">Choose Intensive</a>
+            </div>
+          </div>
+
+        </div><!-- /grid -->
+      </div>
+    </section>
+
+    <!-- ===== 05. ENROLLMENT PROCESS — Vertical Timeline ===== -->
+    <section class="svc-process" id="process">
+      <div class="section-inner">
+
+        <div class="svc-process__head" data-aos="fade-up">
+          <p class="eyebrow"><span class="eyebrow__dot"></span>Getting Started</p>
+          <h2 class="svc-process__title">Four steps from inquiry<br><em>to instrument.</em></h2>
+        </div>
+
+        <div class="svc-process__timeline" id="svcProcessRail">
+
+          <div class="svc-process__track" aria-hidden="true">
+            <div class="svc-process__track-fill" id="svcProcessFg"></div>
+          </div>
+
+          <div class="svc-process__step" data-aos="fade-right" data-aos-delay="0">
+            <div class="svc-process__node">
+              <span class="svc-process__node-ring" aria-hidden="true"></span>
+              <span class="svc-process__num">01</span>
+            </div>
+            <div class="svc-process__card">
+              <div class="svc-process__card-icon" aria-hidden="true"><i class="fas fa-calendar-check"></i></div>
+              <div class="svc-process__card-text">
+                <h3>Book a trial</h3>
+                <p>Meet your prospective instructor and sit in on a real 30-minute lesson — completely free, zero
+                  commitment.</p>
+              </div>
+              <span class="svc-process__card-tag">Free</span>
+            </div>
+          </div>
+
+          <div class="svc-process__step" data-aos="fade-left" data-aos-delay="100">
+            <div class="svc-process__node">
+              <span class="svc-process__node-ring" aria-hidden="true"></span>
+              <span class="svc-process__num">02</span>
+            </div>
+            <div class="svc-process__card">
+              <div class="svc-process__card-icon" aria-hidden="true"><i class="fas fa-clipboard-list"></i></div>
+              <div class="svc-process__card-text">
+                <h3>Placement review</h3>
+                <p>We assess your current level and recommend a personalized plan, the right instructor, and a weekly
+                  cadence that fits your life.</p>
+              </div>
+              <span class="svc-process__card-tag">~1 week</span>
+            </div>
+          </div>
+
+          <div class="svc-process__step" data-aos="fade-right" data-aos-delay="200">
+            <div class="svc-process__node">
+              <span class="svc-process__node-ring" aria-hidden="true"></span>
+              <span class="svc-process__num">03</span>
+            </div>
+            <div class="svc-process__card">
+              <div class="svc-process__card-icon" aria-hidden="true"><i class="fas fa-pen-alt"></i></div>
+              <div class="svc-process__card-text">
+                <h3>Enroll &amp; schedule</h3>
+                <p>Choose a membership tier, lock in recurring lesson slots, and get access to the student portal and
+                  open studio hours.</p>
+              </div>
+              <span class="svc-process__card-tag">Day 1</span>
+            </div>
+          </div>
+
+          <div class="svc-process__step" data-aos="fade-left" data-aos-delay="300">
+            <div class="svc-process__node">
+              <span class="svc-process__node-ring" aria-hidden="true"></span>
+              <span class="svc-process__num">04</span>
+            </div>
+            <div class="svc-process__card">
+              <div class="svc-process__card-icon" aria-hidden="true"><i class="fas fa-star"></i></div>
+              <div class="svc-process__card-text">
+                <h3>First recital</h3>
+                <p>Every student performs within their first term — no exceptions. A stage is waiting for you from the
+                  moment you join.</p>
+              </div>
+              <span class="svc-process__card-tag">Term 1</span>
+            </div>
+          </div>
+
+        </div><!-- /timeline -->
+      </div>
+    </section>
+
+    <!-- ===== 06. FAQ — Split Panel Layout ===== -->
+    <section class="svc-faq" id="faq">
+      <div class="section-inner svc-faq__inner">
+
+        <!-- Left sticky panel -->
+        <div class="svc-faq__aside" data-aos="fade-right">
+          <p class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span>Questions</p>
+          <h2 class="svc-faq__title">Before you<br><em>enroll.</em></h2>
+          <p class="svc-faq__aside-sub">Everything you need to know before your first session. Can't find the answer?
+            Write to us.</p>
+          <a href="contact.html" class="svc-faq__aside-btn">Contact us <i class="fas fa-arrow-right"></i></a>
+
+          <!-- Category filter pills -->
+          <div class="svc-faq-filters" role="group" aria-label="Filter FAQ by topic">
+            <button class="svc-faq-filter is-active" data-filter="all">All</button>
+            <button class="svc-faq-filter" data-filter="lessons">Lessons</button>
+            <button class="svc-faq-filter" data-filter="billing">Billing</button>
+            <button class="svc-faq-filter" data-filter="equipment">Equipment</button>
+          </div>
+        </div>
+
+        <!-- Right accordion list -->
+        <div class="svc-faq__list" data-aos="fade-left">
+
+          <div class="svc-faq__item" data-category="lessons">
+            <button class="svc-faq__q" aria-expanded="false">
+              <span>Do you offer trial lessons before I commit?</span>
+              <span class="svc-faq__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 8l5 5 5-5" />
+                </svg>
+              </span>
+            </button>
+            <div class="svc-faq__a">
+              <p>Yes — every prospective student takes one 30-minute trial lesson with a faculty member in their
+                discipline, at no cost, before choosing a plan.</p>
+            </div>
+          </div>
+
+          <div class="svc-faq__item" data-category="lessons">
+            <button class="svc-faq__q" aria-expanded="false">
+              <span>Can I switch disciplines or instructors later?</span>
+              <span class="svc-faq__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 8l5 5 5-5" />
+                </svg>
+              </span>
+            </button>
+            <div class="svc-faq__a">
+              <p>Absolutely. Students on the Progressive and Artist Intensive tiers can switch discipline or request a
+                new instructor at any term boundary, subject to availability.</p>
+            </div>
+          </div>
+
+          <div class="svc-faq__item" data-category="equipment">
+            <button class="svc-faq__q" aria-expanded="false">
+              <span>Is instrument rental available?</span>
+              <span class="svc-faq__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 8l5 5 5-5" />
+                </svg>
+              </span>
+            </button>
+            <div class="svc-faq__a">
+              <p>We partner with a local luthier and piano technician for discounted student rentals — ask your
+                admissions contact for current rates and availability.</p>
+            </div>
+          </div>
+
+          <div class="svc-faq__item" data-category="billing">
+            <button class="svc-faq__q" aria-expanded="false">
+              <span>What happens if I need to pause a term?</span>
+              <span class="svc-faq__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 8l5 5 5-5" />
+                </svg>
+              </span>
+            </button>
+            <div class="svc-faq__a">
+              <p>Membership can be frozen once per year for up to eight weeks with 14 days' notice — your lesson slot is
+                held for you on return.</p>
+            </div>
+          </div>
+
+          <div class="svc-faq__item" data-category="billing">
+            <button class="svc-faq__q" aria-expanded="false">
+              <span>Are there any registration or material fees?</span>
+              <span class="svc-faq__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 8l5 5 5-5" />
+                </svg>
+              </span>
+            </button>
+            <div class="svc-faq__a">
+              <p>A one-time registration fee of $25 covers your student portal access, placement assessment, and printed
+                curriculum materials for your first term.</p>
+            </div>
+          </div>
+
+          <div class="svc-faq__item" data-category="lessons">
+            <button class="svc-faq__q" aria-expanded="false">
+              <span>What age groups do you teach?</span>
+              <span class="svc-faq__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 8l5 5 5-5" />
+                </svg>
+              </span>
+            </button>
+            <div class="svc-faq__a">
+              <p>We teach students from age 6 through adult. Each program specifies a minimum starting age; adult
+                beginners are always welcome and have a dedicated curriculum track.</p>
+            </div>
+          </div>
+
+        </div><!-- /list -->
+      </div>
+    </section>
+
+    <!-- ===== 07. STUDENT STORIES — Testimonial Carousel ===== -->
+    <section class="svc-stories" id="stories">
+      <div class="svc-stories__bg" aria-hidden="true"></div>
+      <div class="section-inner">
+
+        <div class="svc-stories__head" data-aos="fade-up">
+          <p class="eyebrow"><span class="eyebrow__dot"></span>Student Stories</p>
+          <h2 class="svc-stories__title">The people who<br><em>kept showing up.</em></h2>
+          <p class="svc-stories__sub">Progress looks different for everyone. Here's what it looked like for a few of
+            ours.</p>
+        </div>
+
+        <!-- Carousel -->
+        <div class="svc-stories__carousel" id="storiesCarousel" data-aos="fade-up" data-aos-delay="100">
+          <div class="svc-stories__track" id="storiesTrack">
+
+            <article class="svc-story">
+              <div class="svc-story__quote-mark" aria-hidden="true">&#8220;</div>
+              <blockquote class="svc-story__quote">
+                I joined with zero experience at 32. Within a year I was performing at the annual recital. The faculty
+                never made me feel like a beginner — just a musician finding my pace.
+              </blockquote>
+              <div class="svc-story__author">
+                <img src="assets/images/testimonials-2.webp"
+                  alt="Priya M." class="svc-story__avatar">
+                <div>
+                  <strong class="svc-story__name">Priya M.</strong>
+                  <span class="svc-story__detail">Piano · 2 years</span>
+                </div>
+                <div class="svc-story__stars" aria-label="5 out of 5 stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </article>
+
+            <article class="svc-story">
+              <div class="svc-story__quote-mark" aria-hidden="true">&#8220;</div>
+              <blockquote class="svc-story__quote">
+                The Production program gave me real skills I used on my first EP. My instructor treated me like a
+                collaborator, not a student. That shift in perspective was everything.
+              </blockquote>
+              <div class="svc-story__author">
+                <img src="assets/images/testimonials-1.webp"
+                  alt="Arjun K." class="svc-story__avatar">
+                <div>
+                  <strong class="svc-story__name">Arjun K.</strong>
+                  <span class="svc-story__detail">Music Production · 1.5 years</span>
+                </div>
+                <div class="svc-story__stars" aria-label="5 out of 5 stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </article>
+
+            <article class="svc-story">
+              <div class="svc-story__quote-mark" aria-hidden="true">&#8220;</div>
+              <blockquote class="svc-story__quote">
+                My daughter went from shy to standing ovation in one year. The chamber ensemble experience gave her
+                confidence I never expected to see at age 10. Worth every session.
+              </blockquote>
+              <div class="svc-story__author">
+                <img src="assets/images/testimonials-3.webp"
+                  alt="Lakshmi R." class="svc-story__avatar">
+                <div>
+                  <strong class="svc-story__name">Lakshmi R.</strong>
+                  <span class="svc-story__detail">Parent · Strings Program</span>
+                </div>
+                <div class="svc-story__stars" aria-label="5 out of 5 stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </article>
+
+            <article class="svc-story">
+              <div class="svc-story__quote-mark" aria-hidden="true">&#8220;</div>
+              <blockquote class="svc-story__quote">
+                The Vocal Arts track pushed me in exactly the right direction. My audition coach at the conservatory
+                said my breath support was the strongest in the batch. That's all Stackly.
+              </blockquote>
+              <div class="svc-story__author">
+                <img src="assets/images/testimonials-4.webp"
+                  alt="Divya S." class="svc-story__avatar">
+                <div>
+                  <strong class="svc-story__name">Divya S.</strong>
+                  <span class="svc-story__detail">Vocal Arts · 3 years</span>
+                </div>
+                <div class="svc-story__stars" aria-label="5 out of 5 stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </article>
+
+          </div><!-- /track -->
+
+          <!-- Controls -->
+          <div class="svc-stories__controls">
+            <button class="svc-stories__arrow svc-stories__arrow--prev" id="storiesPrev"
+              aria-label="Previous testimonial">
+              <i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="svc-stories__dots" id="storiesDots" role="tablist" aria-label="Testimonial navigation">
+              <button class="svc-stories__dot is-active" role="tab" aria-selected="true" data-index="0"
+                aria-label="Testimonial 1"></button>
+              <button class="svc-stories__dot" role="tab" aria-selected="false" data-index="1"
+                aria-label="Testimonial 2"></button>
+              <button class="svc-stories__dot" role="tab" aria-selected="false" data-index="2"
+                aria-label="Testimonial 3"></button>
+              <button class="svc-stories__dot" role="tab" aria-selected="false" data-index="3"
+                aria-label="Testimonial 4"></button>
+            </div>
+            <button class="svc-stories__arrow svc-stories__arrow--next" id="storiesNext" aria-label="Next testimonial">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+        </div><!-- /carousel -->
+
+        <!-- Bottom CTA strip -->
+        <div class="svc-stories__cta" data-aos="fade-up" data-aos-delay="200">
+          <p>Ready to write your own story?</p>
+          <a href="contact.html" class="btn btn--solid">Book a free trial lesson <i class="fas fa-arrow-right"
+              aria-hidden="true"></i></a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+
+    <div class="section-inner footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="brand brand--footer">
+          <img src="assets/images/stackly-logo.webp" alt="Stackly Music Academy"
+            class="brand__logo brand__logo--footer">
+        </a>
+        <p>A disciplined music education for pianists, vocalists, strings players and producers in Chennai.</p>
+        <div class="footer__social" aria-label="Social media">
+          <a href="404.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Courses</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Programs</h4>
+        <a href="404.html">Piano &amp; Keyboard</a>
+        <a href="404.html">Voice &amp; Vocal Technique</a>
+        <a href="404.html">Violin &amp; Guitar</a>
+        <a href="404.html">Percussion</a>
+        <a href="404.html">Music Production</a>
+      </div>
+
+      <div class="footer__col footer__col--newsletter">
+        <h4>Stay in tune</h4>
+        <p>Recital dates and audition news, once a month.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="text" placeholder="Your email" aria-label="Email address" inputmode="text">
+          <button type="submit" aria-label="Subscribe"> <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="section-inner footer__bottom">
+      <p>&copy; <span id="year"></span> Stackly Music Academy. All rights reserved.</p>
+      <p>Designed for musicians who show up on time.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/services.js"></script>
+</body>
+
+</html>

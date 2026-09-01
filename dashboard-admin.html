@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — Cadence Conservatory</title>
+  <meta name="description" content="Manage students, faculty and reports at Cadence Conservatory.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+
+<body class="dash-body">
+
+  <!-- ===== Mobile top bar ===== -->
+  <div class="dash-mobile-bar">
+    <a href="index.html" class="brand">
+      <img src="assets/images/stackly-logo.webp" alt="Cadence Conservatory" class="brand__logo brand__logo--light">
+    </a>
+    <button class="dash-mobile-toggle" id="dashMobileToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="dash-overlay" id="dashOverlay"></div>
+
+  <div class="dash-shell">
+
+    <!-- ===== Sidebar ===== -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <a href="index.html" class="brand dash-sidebar__brand">
+        <img src="assets/images/stackly-logo.webp" alt="Cadence Conservatory" class="brand__logo brand__logo--light">
+      </a>
+
+      <div class="dash-sidebar__user">
+        <i class="fas fa-circle-user" aria-hidden="true"></i>
+        <span id="dashSidebarEmail" class="dash-sidebar__user-email">—</span>
+      </div>
+
+      <p class="dash-sidebar__label">Admin Console</p>
+      <nav class="dash-nav" aria-label="Dashboard sections">
+        <button type="button" class="dash-nav__item is-active" data-panel-target="panelOverview"
+          data-title="Front Office <em>Overview.</em>"
+          data-desc="A snapshot of enrollment, faculty and revenue across the conservatory.">
+          <span class="dash-nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3" y="3" width="8" height="8" rx="1.5" />
+              <rect x="13" y="3" width="8" height="8" rx="1.5" />
+              <rect x="3" y="13" width="8" height="8" rx="1.5" />
+              <rect x="13" y="13" width="8" height="8" rx="1.5" />
+            </svg></span>
+          Overview
+        </button>
+        <button type="button" class="dash-nav__item" data-panel-target="panelStudents"
+          data-title="Manage <em>Students.</em>" data-desc="Search, review and manage every student record.">
+          <span class="dash-nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg></span>
+          Students
+        </button>
+        <button type="button" class="dash-nav__item" data-panel-target="panelFaculty"
+          data-title="Resident <em>Faculty.</em>" data-desc="Every instructor teaching this term, by discipline.">
+          <span class="dash-nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M22 10 12 4 2 10l10 6 10-6Z" />
+              <path d="M6 12.5V17c0 1.5 3 3 6 3s6-1.5 6-3v-4.5" />
+            </svg></span>
+          Faculty
+        </button>
+        <button type="button" class="dash-nav__item" data-panel-target="panelReports"
+          data-title="Reports &amp; <em>Insights.</em>" data-desc="Generate and export operational reports.">
+          <span class="dash-nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M3 3v18h18" />
+              <path d="M7 15l4-6 3 4 5-8" />
+            </svg></span>
+          Reports
+        </button>
+      </nav>
+
+      <div class="dash-sidebar__spacer"></div>
+
+      <div class="dash-sidebar__foot">
+        <a href="index.html" class="dash-nav__item">
+          <span class="dash-nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M3 11.5 12 4l9 7.5" />
+              <path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9" />
+            </svg></span>
+          Back to Home
+        </a>
+        <a href="login.html" class="dash-nav__item dash-nav__item--logout">
+          <span class="dash-nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <path d="M16 17l5-5-5-5" />
+              <path d="M21 12H9" />
+            </svg></span>
+          Log Out
+        </a>
+      </div>
+    </aside>
+
+    <!-- ===== Main content ===== -->
+    <main class="dash-main">
+      <div class="dash-header">
+        <div>
+          <p class="eyebrow"><span class="eyebrow__dot"></span>Admin Console</p>
+          <h1 id="dashPageTitle">Front Office <em>Overview.</em></h1>
+          <p id="dashPageDesc">A snapshot of enrollment, faculty and revenue across the conservatory.</p>
+        </div>
+        <div class="dash-header__meta">
+          <div class="dash-user-email">
+          <span class="dash-avatar-circle">A</span>
+          <span id="dashUserEmailChip" class="dash-user-email__text">—</span>
+        </div>
+          Signed in as Front Office<br>Admin ID CC-ADM-04
+        </div>
+      </div>
+
+      <!-- ===== Overview ===== -->
+      <section class="dash-panel is-active" id="panelOverview">
+        <div class="dash-stats">
+          <div class="dash-stat">
+            <p class="dash-stat__label">Total Students</p>
+            <p class="dash-stat__value">2,431</p>
+            <p class="dash-stat__delta">&uarr; 28 this month</p>
+          </div>
+          <div class="dash-stat">
+            <p class="dash-stat__label">Resident Faculty</p>
+            <p class="dash-stat__value">34</p>
+            <p class="dash-stat__delta dash-stat__delta--flat">Across 6 disciplines</p>
+          </div>
+          <div class="dash-stat">
+            <p class="dash-stat__label">Monthly Revenue</p>
+            <p class="dash-stat__value">&#8377;41.2L</p>
+            <p class="dash-stat__delta">&uarr; 6.4% vs last month</p>
+          </div>
+          <div class="dash-stat">
+            <p class="dash-stat__label">Upcoming Recitals</p>
+            <p class="dash-stat__value">3</p>
+            <p class="dash-stat__delta dash-stat__delta--flat">Next: Sep 12</p>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Quick actions</h2>
+              <p>Common front-office tasks.</p>
+            </div>
+          </div>
+          <div class="dash-actions">
+            <button type="button" class="btn btn--solid js-stub">Add Student</button>
+            <button type="button" class="btn btn--line js-stub">Add Faculty</button>
+            <button type="button" class="btn btn--line js-stub">Post Announcement</button>
+            <button type="button" class="btn btn--line js-stub">Export Data</button>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Recent enrollments</h2>
+              <p>New students this week.</p>
+            </div>
+            <button type="button" class="btn btn--line btn--sm" data-panel-target="panelStudents"
+              data-title="Manage <em>Students.</em>" data-desc="Search, review and manage every student record.">View
+              All Students</button>
+          </div>
+          <div class="dash-rows">
+            <div class="dash-row">
+              <div class="dash-row__avatar">RK</div>
+              <div>
+                <p class="dash-row__title">Rahul Krishnan enrolled in Guitar — Beginner</p>
+                <p class="dash-row__sub">Age 11 &middot; 1 day ago</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">New</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Review</button>
+            </div>
+            <div class="dash-row">
+              <div class="dash-row__avatar">SM</div>
+              <div>
+                <p class="dash-row__title">Sneha Menon enrolled in Voice — Foundation</p>
+                <p class="dash-row__sub">Age 9 &middot; 2 days ago</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">New</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Review</button>
+            </div>
+            <div class="dash-row">
+              <div class="dash-row__avatar">VT</div>
+              <div>
+                <p class="dash-row__title">Vikram Thomas's tuition payment failed</p>
+                <p class="dash-row__sub">Piano &middot; 3 days ago</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--due">Action needed</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Review</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Announcements -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Announcements</h2>
+              <p>Posted to all students and faculty.</p>
+            </div>
+            <button type="button" class="btn btn--solid btn--sm js-stub">Post New</button>
+          </div>
+          <div class="dash-announce-list">
+            <div class="dash-announce">
+              <div class="dash-announce__icon dash-announce__icon--alert"><i class="fas fa-bullhorn"></i></div>
+              <div class="dash-announce__body">
+                <p class="dash-announce__title">Autumn Recital seating confirmation open</p>
+                <p class="dash-announce__meta">Posted Aug 28, 2026 &middot; All students</p>
+                <p class="dash-announce__text">Students performing in the Sep 12 recital must confirm their seat
+                  allocation by Sep 05. Log in to the portal to confirm.</p>
+              </div>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Edit</button>
+            </div>
+            <div class="dash-announce">
+              <div class="dash-announce__icon"><i class="fas fa-info-circle"></i></div>
+              <div class="dash-announce__body">
+                <p class="dash-announce__title">Studio closed Sep 14 — National holiday</p>
+                <p class="dash-announce__meta">Posted Aug 25, 2026 &middot; All programs</p>
+                <p class="dash-announce__text">All lessons on Sunday Sep 14 are cancelled. Faculty will reach out to
+                  reschedule where applicable.</p>
+              </div>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Edit</button>
+            </div>
+            <div class="dash-announce">
+              <div class="dash-announce__icon"><i class="fas fa-calendar-alt"></i></div>
+              <div class="dash-announce__body">
+                <p class="dash-announce__title">Winter term registration opens Oct 01</p>
+                <p class="dash-announce__meta">Posted Aug 22, 2026 &middot; All students</p>
+                <p class="dash-announce__text">Existing students get priority booking from Oct 1–7 before slots open to
+                  the public on Oct 8.</p>
+              </div>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Edit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Revenue overview -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Revenue by program</h2>
+              <p>Monthly tuition split across disciplines.</p>
+            </div>
+            <button type="button" class="btn btn--line btn--sm js-stub">Full Report</button>
+          </div>
+          <div class="dash-rev-bars">
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Piano &amp; Keyboard</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill" style="width:82%"></div>
+              </div>
+              <span class="dash-rev-bar__val">&#8377;12.4L</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Vocal Arts</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--2" style="width:61%"></div>
+              </div>
+              <span class="dash-rev-bar__val">&#8377;9.2L</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Strings &amp; Ensemble</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--3" style="width:48%"></div>
+              </div>
+              <span class="dash-rev-bar__val">&#8377;7.1L</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Music Production</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--4" style="width:38%"></div>
+              </div>
+              <span class="dash-rev-bar__val">&#8377;5.8L</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Theory &amp; Composition</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--5" style="width:29%"></div>
+              </div>
+              <span class="dash-rev-bar__val">&#8377;4.4L</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Masterclasses</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--6" style="width:18%"></div>
+              </div>
+              <span class="dash-rev-bar__val">&#8377;2.3L</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Students ===== -->
+      <section class="dash-panel" id="panelStudents">
+
+        <!-- Enrollment stats strip -->
+        <div class="dash-pay-summary">
+          <div class="dash-pay-summary__item">
+            <span class="dash-pay-summary__label">Total enrolled</span>
+            <span class="dash-pay-summary__value">2,431</span>
+          </div>
+          <div class="dash-pay-summary__item">
+            <span class="dash-pay-summary__label">New this month</span>
+            <span class="dash-pay-summary__value">28</span>
+          </div>
+          <div class="dash-pay-summary__item dash-pay-summary__item--due">
+            <span class="dash-pay-summary__label">Waitlisted</span>
+            <span class="dash-pay-summary__value">14</span>
+          </div>
+          <div class="dash-pay-summary__item">
+            <span class="dash-pay-summary__label">Trial pending</span>
+            <span class="dash-pay-summary__value">6</span>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>All students</h2>
+              <p>2,431 enrolled across every program.</p>
+            </div>
+            <button type="button" class="btn btn--solid btn--sm js-stub">Add Student</button>
+          </div>
+          <div class="dash-toolbar">
+            <input type="search" placeholder="Search by name or program&hellip;" aria-label="Search students"
+              data-filter-input="#studentTableBody tr">
+          </div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Program</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="studentTableBody">
+                <tr>
+                  <td>Rahul Krishnan</td>
+                  <td>Guitar — Beginner</td>
+                  <td><span class="dash-row__tag dash-row__tag--live">Active</span></td>
+                  <td><button type="button" class="btn btn--line btn--sm js-stub">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Sneha Menon</td>
+                  <td>Voice — Foundation</td>
+                  <td><span class="dash-row__tag dash-row__tag--live">Active</span></td>
+                  <td><button type="button" class="btn btn--line btn--sm js-stub">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Ananya Suresh</td>
+                  <td>Piano &amp; Voice</td>
+                  <td><span class="dash-row__tag dash-row__tag--live">Active</span></td>
+                  <td><button type="button" class="btn btn--line btn--sm js-stub">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Vikram Thomas</td>
+                  <td>Piano — Intermediate</td>
+                  <td><span class="dash-row__tag dash-row__tag--due">Payment due</span></td>
+                  <td><button type="button" class="btn btn--line btn--sm js-stub">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Meera Pillai</td>
+                  <td>Violin — Chamber</td>
+                  <td><span class="dash-row__tag">Waitlisted</span></td>
+                  <td><button type="button" class="btn btn--line btn--sm js-stub">Edit</button></td>
+                </tr>
+                <tr>
+                  <td>Aditya Shah</td>
+                  <td>Guitar — Songwriting</td>
+                  <td><span class="dash-row__tag dash-row__tag--live">Active</span></td>
+                  <td><button type="button" class="btn btn--line btn--sm js-stub">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Pending actions -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Pending actions</h2>
+              <p>Items that need your attention today.</p>
+            </div>
+          </div>
+          <div class="dash-checklist">
+            <label class="dash-check-item">
+              <input type="checkbox">
+              <div class="dash-check-item__body">
+                <span class="dash-check-item__title">Confirm trial class for Riya Nair — Guitar</span>
+                <span class="dash-check-item__meta">Requested Aug 30, 2026</span>
+              </div>
+              <span class="dash-row__tag dash-row__tag--due">Urgent</span>
+            </label>
+            <label class="dash-check-item">
+              <input type="checkbox">
+              <div class="dash-check-item__body">
+                <span class="dash-check-item__title">Follow up on Vikram Thomas's overdue invoice</span>
+                <span class="dash-check-item__meta">INV-2026-079 &middot; Overdue 5 days</span>
+              </div>
+              <span class="dash-row__tag dash-row__tag--due">Overdue</span>
+            </label>
+            <label class="dash-check-item">
+              <input type="checkbox" checked>
+              <div class="dash-check-item__body">
+                <span class="dash-check-item__title">Send welcome pack to 3 new August enrollees</span>
+                <span class="dash-check-item__meta">Completed Aug 29, 2026</span>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">Done</span>
+            </label>
+            <label class="dash-check-item">
+              <input type="checkbox">
+              <div class="dash-check-item__body">
+                <span class="dash-check-item__title">Assign instructor for Meera Pillai's waitlisted slot</span>
+                <span class="dash-check-item__meta">Violin — Chamber &middot; Waiting since Aug 18</span>
+              </div>
+              <span class="dash-row__tag">Pending</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Program distribution -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Enrollment by program</h2>
+              <p>Active students per discipline.</p>
+            </div>
+          </div>
+          <div class="dash-rev-bars">
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Piano &amp; Keyboard</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill" style="width:76%"></div>
+              </div>
+              <span class="dash-rev-bar__val">742</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Vocal Arts</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--2" style="width:58%"></div>
+              </div>
+              <span class="dash-rev-bar__val">561</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Strings &amp; Ensemble</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--3" style="width:44%"></div>
+              </div>
+              <span class="dash-rev-bar__val">428</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Music Production</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--4" style="width:36%"></div>
+              </div>
+              <span class="dash-rev-bar__val">351</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Theory &amp; Composition</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--5" style="width:24%"></div>
+              </div>
+              <span class="dash-rev-bar__val">234</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Faculty ===== -->
+      <section class="dash-panel" id="panelFaculty">
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Resident faculty</h2>
+              <p>34 instructors across 6 disciplines.</p>
+            </div>
+            <button type="button" class="btn btn--solid btn--sm js-stub">Add Faculty</button>
+          </div>
+          <div class="dash-grid">
+            <div class="dash-faculty-card">
+              <div class="dash-faculty-card__avatar">AV</div>
+              <h3>Arjun Vasudev</h3>
+              <p>Head of Strings</p><button type="button" class="btn btn--line btn--sm js-stub">Edit Profile</button>
+            </div>
+            <div class="dash-faculty-card">
+              <div class="dash-faculty-card__avatar">DM</div>
+              <h3>Divya Menon</h3>
+              <p>Head of Voice</p><button type="button" class="btn btn--line btn--sm js-stub">Edit Profile</button>
+            </div>
+            <div class="dash-faculty-card">
+              <div class="dash-faculty-card__avatar">RF</div>
+              <h3>Rohan Fernandes</h3>
+              <p>Head of Production</p><button type="button" class="btn btn--line btn--sm js-stub">Edit Profile</button>
+            </div>
+            <div class="dash-faculty-card">
+              <div class="dash-faculty-card__avatar">KI</div>
+              <h3>Kavya Iyer</h3>
+              <p>Head of Percussion</p><button type="button" class="btn btn--line btn--sm js-stub">Edit Profile</button>
+            </div>
+            <div class="dash-faculty-card">
+              <div class="dash-faculty-card__avatar">PN</div>
+              <h3>Priya Nair</h3>
+              <p>Piano Faculty</p><button type="button" class="btn btn--line btn--sm js-stub">Edit Profile</button>
+            </div>
+            <div class="dash-faculty-card">
+              <div class="dash-faculty-card__avatar">SK</div>
+              <h3>Sanjay Kapoor</h3>
+              <p>Theory &amp; Composition</p><button type="button" class="btn btn--line btn--sm js-stub">Edit
+                Profile</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teaching load -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Weekly teaching load</h2>
+              <p>Hours taught this week per faculty member.</p>
+            </div>
+            <button type="button" class="btn btn--line btn--sm js-stub">Full Report</button>
+          </div>
+          <div class="dash-rev-bars">
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Arjun Vasudev</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill" style="width:90%"></div>
+              </div>
+              <span class="dash-rev-bar__val">18 hrs</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Divya Menon</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--2" style="width:75%"></div>
+              </div>
+              <span class="dash-rev-bar__val">15 hrs</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Priya Nair</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--3" style="width:70%"></div>
+              </div>
+              <span class="dash-rev-bar__val">14 hrs</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Rohan Fernandes</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--4" style="width:55%"></div>
+              </div>
+              <span class="dash-rev-bar__val">11 hrs</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Sanjay Kapoor</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--5" style="width:40%"></div>
+              </div>
+              <span class="dash-rev-bar__val">8 hrs</span>
+            </div>
+            <div class="dash-rev-bar">
+              <span class="dash-rev-bar__label">Kavya Iyer</span>
+              <div class="dash-rev-bar__track">
+                <div class="dash-rev-bar__fill dash-rev-bar__fill--6" style="width:30%"></div>
+              </div>
+              <span class="dash-rev-bar__val">6 hrs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leave requests -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Faculty leave requests</h2>
+              <p>Pending approvals for upcoming absences.</p>
+            </div>
+          </div>
+          <div class="dash-rows">
+            <div class="dash-row">
+              <div class="dash-row__avatar">PN</div>
+              <div>
+                <p class="dash-row__title">Priya Nair — Sep 10 &amp; 11</p>
+                <p class="dash-row__sub">Piano Faculty &middot; Personal travel &middot; 2 lessons affected</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--due">Pending</span>
+              <button type="button" class="btn btn--solid btn--sm js-stub dash-row__action">Approve</button>
+            </div>
+            <div class="dash-row">
+              <div class="dash-row__avatar">SK</div>
+              <div>
+                <p class="dash-row__title">Sanjay Kapoor — Sep 18</p>
+                <p class="dash-row__sub">Theory &middot; Medical appointment &middot; 1 lesson affected</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--due">Pending</span>
+              <button type="button" class="btn btn--solid btn--sm js-stub dash-row__action">Approve</button>
+            </div>
+            <div class="dash-row">
+              <div class="dash-row__avatar">RF</div>
+              <div>
+                <p class="dash-row__title">Rohan Fernandes — Aug 28</p>
+                <p class="dash-row__sub">Production &middot; Conference &middot; Rescheduled</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">Approved</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Details</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Reports ===== -->
+      <section class="dash-panel" id="panelReports">
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Generate reports</h2>
+              <p>Create and export data for the front office.</p>
+            </div>
+          </div>
+          <div class="dash-report-card">
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span class="dash-report-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <path d="M3 3v18h18" />
+                  <path d="M7 15l4-6 3 4 5-8" />
+                </svg></span>
+              <div>
+                <p class="dash-row__title">Enrollment summary</p>
+                <p class="dash-row__sub">New sign-ups, program mix and drop-off by month.</p>
+              </div>
+            </div>
+            <button type="button" class="btn btn--line btn--sm js-stub">Generate</button>
+          </div>
+          <div class="dash-report-card">
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span class="dash-report-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <rect x="2" y="5" width="20" height="14" rx="2" />
+                  <path d="M2 10h20M6 15h4" />
+                </svg></span>
+              <div>
+                <p class="dash-row__title">Revenue &amp; outstanding invoices</p>
+                <p class="dash-row__sub">Collected tuition against dues, by program.</p>
+              </div>
+            </div>
+            <button type="button" class="btn btn--line btn--sm js-stub">Generate</button>
+          </div>
+          <div class="dash-report-card">
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span class="dash-report-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <path d="M22 10 12 4 2 10l10 6 10-6Z" />
+                  <path d="M6 12.5V17c0 1.5 3 3 6 3s6-1.5 6-3v-4.5" />
+                </svg></span>
+              <div>
+                <p class="dash-row__title">Faculty load &amp; attendance</p>
+                <p class="dash-row__sub">Weekly teaching hours and student attendance by faculty.</p>
+              </div>
+            </div>
+            <button type="button" class="btn btn--line btn--sm js-stub">Generate</button>
+          </div>
+          <div class="dash-report-card">
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span class="dash-report-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 3" />
+                </svg></span>
+              <div>
+                <p class="dash-row__title">Recital &amp; event attendance</p>
+                <p class="dash-row__sub">RSVP and seat-fill rates for this term's events.</p>
+              </div>
+            </div>
+            <button type="button" class="btn btn--line btn--sm js-stub">Generate</button>
+          </div>
+        </div>
+
+        <!-- Scheduled reports -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Scheduled reports</h2>
+              <p>Auto-generated and emailed on a set cadence.</p>
+            </div>
+            <button type="button" class="btn btn--solid btn--sm js-stub">Add Schedule</button>
+          </div>
+          <div class="dash-rows">
+            <div class="dash-row">
+              <div class="dash-row__avatar" style="background:var(--ink-softer);color:var(--violet-light)"><i
+                  class="fas fa-clock" style="font-size:0.9rem"></i></div>
+              <div>
+                <p class="dash-row__title">Weekly enrollment summary</p>
+                <p class="dash-row__sub">Every Monday, 8:00 AM &middot; Sent to admin@thestackly.com</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">Active</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Edit</button>
+            </div>
+            <div class="dash-row">
+              <div class="dash-row__avatar" style="background:var(--ink-softer);color:var(--violet-light)"><i
+                  class="fas fa-clock" style="font-size:0.9rem"></i></div>
+              <div>
+                <p class="dash-row__title">Monthly revenue report</p>
+                <p class="dash-row__sub">1st of every month &middot; Sent to accounts@thestackly.com</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">Active</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Edit</button>
+            </div>
+            <div class="dash-row">
+              <div class="dash-row__avatar" style="background:var(--ink-softer);color:var(--violet-light)"><i
+                  class="fas fa-clock" style="font-size:0.9rem"></i></div>
+              <div>
+                <p class="dash-row__title">Term-end faculty performance digest</p>
+                <p class="dash-row__sub">End of each term &middot; Sent to principal@thestackly.com</p>
+              </div>
+              <span class="dash-row__tag">Paused</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Edit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Export history timeline -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Export history</h2>
+              <p>Recently generated files.</p>
+            </div>
+          </div>
+          <div class="dash-timeline">
+            <div class="dash-timeline__item">
+              <div class="dash-timeline__dot"></div>
+              <div class="dash-timeline__content">
+                <p class="dash-timeline__title">Revenue report — August 2026</p>
+                <p class="dash-timeline__meta">Generated Aug 29, 2026 &middot; CSV &middot; 48 KB</p>
+              </div>
+              <button type="button" class="btn btn--line btn--sm js-stub">Download</button>
+            </div>
+            <div class="dash-timeline__item">
+              <div class="dash-timeline__dot"></div>
+              <div class="dash-timeline__content">
+                <p class="dash-timeline__title">Enrollment summary — Q2 2026</p>
+                <p class="dash-timeline__meta">Generated Aug 01, 2026 &middot; PDF &middot; 210 KB</p>
+              </div>
+              <button type="button" class="btn btn--line btn--sm js-stub">Download</button>
+            </div>
+            <div class="dash-timeline__item">
+              <div class="dash-timeline__dot"></div>
+              <div class="dash-timeline__content">
+                <p class="dash-timeline__title">Faculty load digest — Term 2</p>
+                <p class="dash-timeline__meta">Generated Jul 15, 2026 &middot; PDF &middot; 96 KB</p>
+              </div>
+              <button type="button" class="btn btn--line btn--sm js-stub">Download</button>
+            </div>
+            <div class="dash-timeline__item">
+              <div class="dash-timeline__dot"></div>
+              <div class="dash-timeline__content">
+                <p class="dash-timeline__title">Recital attendance — Spring Showcase</p>
+                <p class="dash-timeline__meta">Generated May 22, 2026 &middot; CSV &middot; 22 KB</p>
+              </div>
+              <button type="button" class="btn btn--line btn--sm js-stub">Download</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

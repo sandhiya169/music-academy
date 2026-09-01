@@ -1,0 +1,880 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal & News — Stackly Music Academy</title>
+  <meta name="description"
+    content="Read the latest news, masterclass recaps, and insights on musical pedagogy from the faculty at Stackly Music Academy.">
+
+  <!-- Fonts: Cormorant Garamond (display), Manrope (body), Space Mono (labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/blog.css">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+
+<body>
+
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="topbar">
+    <p class="topbar__text">Winter Masterclasses now open &mdash; limited seats across all programs &nbsp;·&nbsp; <a
+        href="index.html#events" class="topbar__link">See dates</a></p>
+  </div>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner">
+      <a href="index.html" class="brand">
+        <img src="assets/images/stackly-logo.webp" alt="Stackly Music Academy" class="brand__logo">
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a href="index.html" class="nav__brand" aria-label="Stackly Music Academy home">
+          <img src="assets/images/stackly-logo.webp" alt="Stackly Music Academy" class="brand__logo brand__logo--light">
+        </a>
+        <ul class="main-nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Courses</a></li>
+          <li><a href="blog.html" class="is-active" aria-current="page">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="login.html" class="nav-login-mobile">Login <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a href="login.html" class="btn btn--line btn--sm">Login</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <main id="top">
+
+    <!-- ===== B1. BLOG HERO (line-mask title reveal + live search) ===== -->
+    <section class="b-hero page-hero">
+      <img src="assets/images/blog-hero.webp"
+        alt="Inside the recording studio" class="page-hero__bg">
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__particles" aria-hidden="true">
+        <span>&#9834;</span><span>&#9835;</span><span>&#9836;</span>
+        <span>&#9833;</span><span>&#9835;</span><span>&#9834;</span>
+      </div>
+      <div class="page-hero__inner">
+        <div class="page-hero__card" data-aos="fade-up">
+          <p class="eyebrow"><span class="eyebrow__dot"></span>The Journal</p>
+          <h1 class="page-hero__title b-hero__title" id="bHeroTitle">
+            <span class="b-line"><span class="b-word">Notes</span> <span class="b-word">on</span> <span
+                class="b-word">music,</span></span>
+            <span class="b-line"><span class="b-word">craft</span> <em><span class="b-word">&amp;</span> <span
+                  class="b-word">the</span> <span class="b-word">stage.</span></em></span>
+          </h1>
+          <p class="page-hero__lede b-hero__lede">Technique guides, recital recaps, faculty insight and academy news —
+            written by the people who still perform.</p>
+          <div class="page-hero__actions">
+            <a href="#articles" class="btn btn--solid">Browse Articles <i class="fas fa-arrow-right"
+                aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="page-hero__visual b-hero__visual" data-aos="fade-left" data-aos-delay="200">
+          <div class="hero-disc" id="bHeroDisc">
+            <span class="hero-disc__label">The<br>Journal</span>
+          </div>
+          <span class="hero-note hero-note--1" aria-hidden="true">&#9834;</span>
+          <span class="hero-note hero-note--2" aria-hidden="true">&#9835;</span>
+          <span class="hero-note hero-note--3" aria-hidden="true">&#9836;</span>
+        </div>
+      </div>
+      <!-- <div class="b-search" data-aos="fade-up" data-aos-delay="150">
+        <input type="search" id="bSearchInput" placeholder="Search the journal&hellip;" aria-label="Search articles">
+      </div> -->
+    </section>
+
+    <!-- ===== B2. FEATURED ARTICLE (Editorial split — Light Section) ===== -->
+    <section class="b-featured" id="featured">
+      <div class="section-inner b-featured__inner">
+        <a href="404.html" class="b-featured__media" data-aos="fade-right">
+          <img src="assets/images/image-1.webp"
+            alt="Faculty conducting a rehearsal" loading="lazy">
+        </a>
+        <div class="b-featured__body" data-aos="fade-left">
+          <span class="b-tag">Editor&rsquo;s Pick</span>
+          <h2><a href="404.html">Inside the Room: How Harmonia Builds a Recital Program</a></h2>
+          <p>A season before the curtain rises, faculty are already arguing over repertoire. We sat in on three
+            programming meetings to see how a recital actually gets built — from first pitch to final cut.</p>
+          <div class="b-card__meta">
+            <span>By Dr. Alissa Vance</span>
+            <span>&bull;</span>
+            <span>Aug 20</span>
+            <span>&bull;</span>
+            <span>9 min read</span>
+          </div>
+          <a href="404.html" class="btn btn--line">Read the Feature <i class="fas fa-arrow-right"
+              aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== B2. FILTER & GRID (Light Section) ===== -->
+    <section class="b-grid-section" id="articles">
+      <div class="section-inner">
+
+        <div class="b-filter" id="bFilter" data-aos="fade-up">
+          <button class="b-filter__btn is-active" data-filter="all">
+            <span class="b-filter__btn-dot"></span>All Articles
+          </button>
+          <button class="b-filter__btn" data-filter="pedagogy">Pedagogy</button>
+          <button class="b-filter__btn" data-filter="recaps">Recital Recaps</button>
+          <button class="b-filter__btn" data-filter="technique">Technique</button>
+          <button class="b-filter__btn" data-filter="news">Academy News</button>
+        </div>
+
+        <div class="b-grid" id="bGrid">
+
+          <article class="b-card" data-category="pedagogy" data-aos="fade-up">
+            <a href="404.html" class="b-card__media" tabindex="-1" aria-hidden="true">
+              <img src="assets/images/image-11.webp"
+                alt="" loading="lazy">
+              <div class="b-card__media-overlay">
+                <span class="b-card__read-cta">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+            <div class="b-card__body">
+              <div class="b-card__top">
+                <span class="b-tag">Pedagogy</span>
+                <span class="b-card__readtime">6 min read</span>
+              </div>
+              <h3><a href="404.html">Why We Still Teach Hanon in the 21st Century</a></h3>
+              <p>An exploration of repetitive exercises and their role in building fundamental motor pathways.</p>
+              <div class="b-card__footer">
+                <div class="b-card__meta">
+                  <span class="b-card__author-dot">AV</span>
+                  <span>Dr. Alissa Vance</span>
+                  <span class="b-card__meta-sep">&bull;</span>
+                  <span>Aug 12</span>
+                </div>
+                <a href="404.html" class="b-card__btn" aria-label="Read Why We Still Teach Hanon">
+                  Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="b-card" data-category="technique" data-aos="fade-up" data-aos-delay="100">
+            <a href="404.html" class="b-card__media" tabindex="-1" aria-hidden="true">
+              <img src="assets/images/image-2.webp"
+                alt="" loading="lazy">
+              <div class="b-card__media-overlay">
+                <span class="b-card__read-cta">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+            <div class="b-card__body">
+              <div class="b-card__top">
+                <span class="b-tag">Technique</span>
+                <span class="b-card__readtime">8 min read</span>
+              </div>
+              <h3><a href="404.html">The Bow Arm: A Conversation with Gravity</a></h3>
+              <p>Re-evaluating how string players use body weight to create resonance rather than relying purely on
+                muscle tension.</p>
+              <div class="b-card__footer">
+                <div class="b-card__meta">
+                  <span class="b-card__author-dot">JR</span>
+                  <span>Jonathan Reed</span>
+                  <span class="b-card__meta-sep">&bull;</span>
+                  <span>Aug 04</span>
+                </div>
+                <a href="404.html" class="b-card__btn" aria-label="Read The Bow Arm">
+                  Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="b-card" data-category="recaps" data-aos="fade-up" data-aos-delay="200">
+            <a href="404.html" class="b-card__media" tabindex="-1" aria-hidden="true">
+              <img src="assets/images/image-4.webp"
+                alt="" loading="lazy">
+              <div class="b-card__media-overlay">
+                <span class="b-card__read-cta">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+            <div class="b-card__body">
+              <div class="b-card__top">
+                <span class="b-tag">Recital Recaps</span>
+                <span class="b-card__readtime">5 min read</span>
+              </div>
+              <h3><a href="404.html">Review: The 2026 Spring Chamber Showcase</a></h3>
+              <p>Highlights from our advanced ensemble program's performance of Schubert and Shostakovich.</p>
+              <div class="b-card__footer">
+                <div class="b-card__meta">
+                  <span class="b-card__author-dot">MS</span>
+                  <span>Maya Sharma</span>
+                  <span class="b-card__meta-sep">&bull;</span>
+                  <span>Jul 28</span>
+                </div>
+                <a href="404.html" class="b-card__btn" aria-label="Read Spring Chamber Showcase">
+                  Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="b-card" data-category="news" data-aos="fade-up">
+            <a href="404.html" class="b-card__media" tabindex="-1" aria-hidden="true">
+              <img src="assets/images/image-15.webp"
+                alt="" loading="lazy">
+              <div class="b-card__media-overlay">
+                <span class="b-card__read-cta">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+            <div class="b-card__body">
+              <div class="b-card__top">
+                <span class="b-tag">Academy News</span>
+                <span class="b-card__readtime">3 min read</span>
+              </div>
+              <h3><a href="404.html">Welcoming Our New Artist-in-Residence</a></h3>
+              <p>Grammy-nominated jazz pianist Julian Hayes joins the Harmonia faculty for the upcoming fall semester.
+              </p>
+              <div class="b-card__footer">
+                <div class="b-card__meta">
+                  <span class="b-card__author-dot">AD</span>
+                  <span>Administration</span>
+                  <span class="b-card__meta-sep">&bull;</span>
+                  <span>Jul 15</span>
+                </div>
+                <a href="404.html" class="b-card__btn" aria-label="Read Artist in Residence article">
+                  Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="b-card" data-category="technique" data-aos="fade-up" data-aos-delay="100">
+            <a href="404.html" class="b-card__media" tabindex="-1" aria-hidden="true">
+              <img src="assets/images/image-8.webp"
+                alt="" loading="lazy">
+              <div class="b-card__media-overlay">
+                <span class="b-card__read-cta">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+            <div class="b-card__body">
+              <div class="b-card__top">
+                <span class="b-tag">Technique</span>
+                <span class="b-card__readtime">4 min read</span>
+              </div>
+              <h3><a href="404.html">Protecting the Voice During Festival Season</a></h3>
+              <p>Essential vocal care routines for singers managing a heavy rehearsal and performance schedule.</p>
+              <div class="b-card__footer">
+                <div class="b-card__meta">
+                  <span class="b-card__author-dot">MS</span>
+                  <span>Maya Sharma</span>
+                  <span class="b-card__meta-sep">&bull;</span>
+                  <span>Jul 02</span>
+                </div>
+                <a href="404.html" class="b-card__btn" aria-label="Read Protecting the Voice">
+                  Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="b-card" data-category="pedagogy" data-aos="fade-up" data-aos-delay="200">
+            <a href="404.html" class="b-card__media" tabindex="-1" aria-hidden="true">
+              <img src="assets/images/image-7.webp"
+                alt="" loading="lazy">
+              <div class="b-card__media-overlay">
+                <span class="b-card__read-cta">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+            <div class="b-card__body">
+              <div class="b-card__top">
+                <span class="b-tag">Pedagogy</span>
+                <span class="b-card__readtime">7 min read</span>
+              </div>
+              <h3><a href="404.html">Redefining &ldquo;Practice&rdquo;: How to Practice Less, But Better</a></h3>
+              <p>Why three hours of mindless playing is less effective than thirty minutes of focused, intentional work.
+              </p>
+              <div class="b-card__footer">
+                <div class="b-card__meta">
+                  <span class="b-card__author-dot">AV</span>
+                  <span>Dr. Alissa Vance</span>
+                  <span class="b-card__meta-sep">&bull;</span>
+                  <span>Jun 18</span>
+                </div>
+                <a href="404.html" class="b-card__btn" aria-label="Read Redefining Practice">
+                  Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="b-empty" id="bEmpty" hidden aria-live="polite">No articles found for this category.</p>
+
+        <!-- Load More -->
+        <!-- <div class="b-load-more" data-aos="fade-up">
+          <button class="b-load-more__btn" id="bLoadMore" type="button">
+            <span class="b-load-more__text">Load More Articles</span>
+            <span class="b-load-more__icon"><i class="fas fa-arrow-down" aria-hidden="true"></i></span>
+          </button>
+          <p class="b-load-more__note">Showing 6 of 24 articles</p>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- ===== B3. MID-PAGE SUBSCRIBE STRIP (Slim, Light Section) ===== -->
+    <!-- <section class="b-subscribe-mid">
+      <div class="section-inner b-subscribe-mid__inner" data-aos="fade-up">
+        <p class="b-subscribe-mid__label">Enjoying the Journal?</p>
+        <form class="b-subscribe-mid__form" id="bSubscribeForm">
+          <input type="email" placeholder="Your email address" required aria-label="Email address for newsletter">
+          <button type="submit" class="btn btn--line">Get it weekly</button>
+        </form>
+        <p class="b-subscribe-mid__note" id="bSubscribeNote" role="status" aria-live="polite"></p>
+      </div>
+    </section> -->
+
+    <!-- ===== B4. SUBSCRIBE (Dark Band) ===== -->
+    <!-- <section class="b-subscribe">
+      <div class="section-inner b-subscribe__inner">
+        <div data-aos="fade-right">
+          <h2 class="section-title">The Harmonia Journal</h2>
+          <p class="section-sub">A monthly digest of our best essays on craft, practice, and the reality of a life in music. Sent to over 5,000 subscribers.</p>
+        </div>
+        
+        <form class="b-subscribe__form" id="journalForm" novalidate data-aos="fade-left">
+          <input type="email" placeholder="Email address" required aria-label="Email address for newsletter">
+          <button type="submit" class="btn btn--solid">Subscribe</button>
+          <p class="b-subscribe__note" id="journalNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section> -->
+
+    <!-- ===== B5. FROM THE VAULT — infinite marquee quote strip ===== -->
+    <section class="b-vault" id="vault" aria-label="Quotes from the vault">
+      <div class="b-vault__header" data-aos="fade-up">
+        <p class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span>From the Vault</p>
+        <h2 class="section-title section-title--light">Words that <em>stayed with us.</em></h2>
+      </div>
+
+      <div class="b-vault__track-wrap" aria-hidden="true">
+        <!-- Row 1 — scrolls left -->
+        <div class="b-vault__track b-vault__track--fwd" id="bVaultRow1">
+          <div class="b-vault__reel">
+            <span class="b-vault__quote">&ldquo;Technique is the servant, not the master.&rdquo; <em>— Dr. Alissa
+                Vance</em></span>
+            <span class="b-vault__sep" aria-hidden="true">&#9834;</span>
+            <span class="b-vault__quote">&ldquo;Every wrong note is a lesson in disguise.&rdquo; <em>— Jonathan
+                Reed</em></span>
+            <span class="b-vault__sep" aria-hidden="true">&#9835;</span>
+            <span class="b-vault__quote">&ldquo;The breath before the phrase matters as much as the phrase
+              itself.&rdquo; <em>— Maya Sharma</em></span>
+            <span class="b-vault__sep" aria-hidden="true">&#9836;</span>
+            <span class="b-vault__quote">&ldquo;Stillness on stage is not emptiness — it is intention.&rdquo; <em>—
+                Prof. Arjun Nair</em></span>
+            <span class="b-vault__sep" aria-hidden="true">&#9834;</span>
+            <span class="b-vault__quote">&ldquo;Rhythm is the skeleton. Melody is the skin. Harmony is the soul.&rdquo;
+              <em>— Dr. Alissa Vance</em></span>
+            <span class="b-vault__sep" aria-hidden="true">&#9835;</span>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="b-vault__reel" aria-hidden="true">
+            <span class="b-vault__quote">&ldquo;Technique is the servant, not the master.&rdquo; <em>— Dr. Alissa
+                Vance</em></span>
+            <span class="b-vault__sep">&#9834;</span>
+            <span class="b-vault__quote">&ldquo;Every wrong note is a lesson in disguise.&rdquo; <em>— Jonathan
+                Reed</em></span>
+            <span class="b-vault__sep">&#9835;</span>
+            <span class="b-vault__quote">&ldquo;The breath before the phrase matters as much as the phrase
+              itself.&rdquo; <em>— Maya Sharma</em></span>
+            <span class="b-vault__sep">&#9836;</span>
+            <span class="b-vault__quote">&ldquo;Stillness on stage is not emptiness — it is intention.&rdquo; <em>—
+                Prof. Arjun Nair</em></span>
+            <span class="b-vault__sep">&#9834;</span>
+            <span class="b-vault__quote">&ldquo;Rhythm is the skeleton. Melody is the skin. Harmony is the soul.&rdquo;
+              <em>— Dr. Alissa Vance</em></span>
+            <span class="b-vault__sep">&#9835;</span>
+          </div>
+        </div>
+        <!-- Row 2 — scrolls right -->
+        <div class="b-vault__track b-vault__track--rev" id="bVaultRow2">
+          <div class="b-vault__reel">
+            <span class="b-vault__quote b-vault__quote--lg">&ldquo;A recital is not a test. It is a gift.&rdquo; <em>—
+                Prof. Arjun Nair</em></span>
+            <span class="b-vault__sep">&#9836;</span>
+            <span class="b-vault__quote b-vault__quote--lg">&ldquo;Practice slowly until the music knows itself.&rdquo;
+              <em>— Jonathan Reed</em></span>
+            <span class="b-vault__sep">&#9833;</span>
+            <span class="b-vault__quote b-vault__quote--lg">&ldquo;Listen more than you play.&rdquo; <em>— Maya
+                Sharma</em></span>
+            <span class="b-vault__sep">&#9835;</span>
+            <span class="b-vault__quote b-vault__quote--lg">&ldquo;The score is a map, not a cage.&rdquo; <em>— Dr.
+                Alissa Vance</em></span>
+            <span class="b-vault__sep">&#9834;</span>
+          </div>
+          <div class="b-vault__reel" aria-hidden="true">
+            <span class="b-vault__quote b-vault__quote--lg">&ldquo;A recital is not a test. It is a gift.&rdquo; <em>—
+                Prof. Arjun Nair</em></span>
+            <span class="b-vault__sep">&#9836;</span>
+            <span class="b-vault__quote b-vault__quote--lg">&ldquo;Practice slowly until the music knows itself.&rdquo;
+              <em>— Jonathan Reed</em></span>
+            <span class="b-vault__sep">&#9833;</span>
+            <span class="b-vault__quote b-vault__quote--lg">&ldquo;Listen more than you play.&rdquo; <em>— Maya
+                Sharma</em></span>
+            <span class="b-vault__sep">&#9835;</span>
+            <span class="b-vault__quote b-vault__quote--lg">&ldquo;The score is a map, not a cage.&rdquo; <em>— Dr.
+                Alissa Vance</em></span>
+            <span class="b-vault__sep">&#9834;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== B6. READ NEXT — horizontal scroll carousel ===== -->
+    <section class="b-readnext" id="readNext">
+      <div class="section-inner">
+        <div class="b-readnext__head" data-aos="fade-up">
+          <div class="b-readnext__head-left">
+            <p class="eyebrow"><span class="eyebrow__dot"></span>Keep Reading</p>
+            <h2 class="section-title">More from <em>the journal.</em></h2>
+          </div>
+          <div class="b-readnext__head-right">
+            <button class="b-rn-arrow b-rn-arrow--prev" id="bRnPrev" aria-label="Previous articles">
+              <i class="fas fa-arrow-left" aria-hidden="true"></i>
+            </button>
+            <button class="b-rn-arrow b-rn-arrow--next" id="bRnNext" aria-label="Next articles">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full-bleed scroll track — no section-inner wrapper so cards bleed edge to edge -->
+      <div class="b-rn-viewport" id="bRnViewport">
+        <div class="b-rn-track" id="bRnTrack">
+
+          <a href="404.html" class="b-rn-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="b-rn-card__strip b-rn-card__strip--violet"></div>
+            <span class="b-rn-card__num">01</span>
+            <div class="b-rn-card__img">
+              <img src="assets/images/image-12.webp"
+                alt="Piano keys" loading="lazy">
+            </div>
+            <div class="b-rn-card__body">
+              <span class="b-tag">Pedagogy</span>
+              <h3>Why We Still Teach Hanon in the 21st Century</h3>
+              <p>An exploration of repetitive exercises and the fundamental motor pathways they build.</p>
+              <span class="b-rn-card__meta">Dr. Alissa Vance &nbsp;·&nbsp; 6 min</span>
+            </div>
+          </a>
+
+          <a href="404.html" class="b-rn-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="b-rn-card__strip b-rn-card__strip--gold"></div>
+            <span class="b-rn-card__num">02</span>
+            <div class="b-rn-card__img">
+              <img src="assets/images/image-2.webp"
+                alt="Violin bow" loading="lazy">
+            </div>
+            <div class="b-rn-card__body">
+              <span class="b-tag">Technique</span>
+              <h3>The Bow Arm: A Conversation with Gravity</h3>
+              <p>How string players use body weight — not muscle — to create lasting resonance.</p>
+              <span class="b-rn-card__meta">Jonathan Reed &nbsp;·&nbsp; 8 min</span>
+            </div>
+          </a>
+
+          <a href="404.html" class="b-rn-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="b-rn-card__strip b-rn-card__strip--ink"></div>
+            <span class="b-rn-card__num">03</span>
+            <div class="b-rn-card__img">
+              <img src="assets/images/image-13.webp"
+                alt="Stage performance" loading="lazy">
+            </div>
+            <div class="b-rn-card__body">
+              <span class="b-tag">Recital Recaps</span>
+              <h3>Review: The 2026 Spring Chamber Showcase</h3>
+              <p>Highlights from our ensemble program's performance of Schubert and Shostakovich.</p>
+              <span class="b-rn-card__meta">Maya Sharma &nbsp;·&nbsp; 5 min</span>
+            </div>
+          </a>
+
+          <a href="404.html" class="b-rn-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="b-rn-card__strip b-rn-card__strip--violet"></div>
+            <span class="b-rn-card__num">04</span>
+            <div class="b-rn-card__img">
+              <img src="assets/images/image-7.webp"
+                alt="Vocalist" loading="lazy">
+            </div>
+            <div class="b-rn-card__body">
+              <span class="b-tag">Technique</span>
+              <h3>Protecting the Voice During Festival Season</h3>
+              <p>Essential vocal care routines for singers managing a heavy rehearsal schedule.</p>
+              <span class="b-rn-card__meta">Maya Sharma &nbsp;·&nbsp; 4 min</span>
+            </div>
+          </a>
+
+          <a href="404.html" class="b-rn-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="b-rn-card__strip b-rn-card__strip--gold"></div>
+            <span class="b-rn-card__num">05</span>
+            <div class="b-rn-card__img">
+              <img src="assets/images/image-9.webp"
+                alt="New faculty" loading="lazy">
+            </div>
+            <div class="b-rn-card__body">
+              <span class="b-tag">Academy News</span>
+              <h3>Welcoming Our New Artist-in-Residence</h3>
+              <p>Grammy-nominated jazz pianist Julian Hayes joins our faculty this fall semester.</p>
+              <span class="b-rn-card__meta">Administration &nbsp;·&nbsp; 3 min</span>
+            </div>
+          </a>
+
+          <a href="404.html" class="b-rn-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="b-rn-card__strip b-rn-card__strip--ink"></div>
+            <span class="b-rn-card__num">06</span>
+            <div class="b-rn-card__img">
+              <img src="assets/images/image-4.webp"
+                alt="Student practicing" loading="lazy">
+            </div>
+            <div class="b-rn-card__body">
+              <span class="b-tag">Pedagogy</span>
+              <h3>Redefining Practice: Less Time, Better Results</h3>
+              <p>Why thirty minutes of focused work beats three hours of mindless repetition.</p>
+              <span class="b-rn-card__meta">Dr. Alissa Vance &nbsp;·&nbsp; 7 min</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="section-inner">
+        <div class="b-rn-progress" aria-hidden="true">
+          <div class="b-rn-progress__bar" id="bRnBar"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== B7. FACULTY VOICES — interview strip layout ===== -->
+    <section class="b-voices" id="facultyVoices">
+      <div class="section-inner">
+
+        <div class="b-voices__header" data-aos="fade-up">
+          <p class="eyebrow"><span class="eyebrow__dot"></span>Faculty Voices</p>
+          <h2 class="section-title">Perspectives on <em>teaching &amp; playing.</em></h2>
+          <p class="section-sub">Five faculty members. Five disciplines. One question: what does music demand of us?</p>
+        </div>
+
+        <div class="b-voices__list">
+
+          <!-- 01 -->
+          <article class="b-voice-row" data-aos="fade-up" data-aos-delay="0">
+            <div class="b-voice-row__left">
+              <span class="b-voice-row__num">01</span>
+              <blockquote class="b-voice-row__quote">
+                &ldquo;The most dangerous thing a teacher can do is make a student afraid of making mistakes. Fear
+                closes the ear. And a closed ear cannot learn.&rdquo;
+              </blockquote>
+              <a href="404.html" class="b-voice-row__link">Read full essay <span aria-hidden="true">&#8599;</span></a>
+            </div>
+            <div class="b-voice-row__rule" aria-hidden="true"></div>
+            <div class="b-voice-row__right">
+              <div class="b-voice-row__avatar">AV</div>
+              <div class="b-voice-row__bio">
+                <strong>Dr. Alissa Vance</strong>
+                <span>Head of Piano &amp; Keyboard</span>
+                <p>Performer and pedagogue. Former faculty at the Royal College of Music, London.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02 -->
+          <article class="b-voice-row" data-aos="fade-up" data-aos-delay="60">
+            <div class="b-voice-row__left">
+              <span class="b-voice-row__num">02</span>
+              <blockquote class="b-voice-row__quote">
+                &ldquo;String playing is a physical conversation with physics. The bow doesn&rsquo;t move the string —
+                gravity does. Most students spend years fighting the very force they should be using.&rdquo;
+              </blockquote>
+              <a href="404.html" class="b-voice-row__link">Read full essay <span aria-hidden="true">&#8599;</span></a>
+            </div>
+            <div class="b-voice-row__rule" aria-hidden="true"></div>
+            <div class="b-voice-row__right">
+              <div class="b-voice-row__avatar">JR</div>
+              <div class="b-voice-row__bio">
+                <strong>Jonathan Reed</strong>
+                <span>Strings Faculty</span>
+                <p>Concertmaster and chamber musician. Teaches violin and ensemble methodology.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03 -->
+          <article class="b-voice-row" data-aos="fade-up" data-aos-delay="120">
+            <div class="b-voice-row__left">
+              <span class="b-voice-row__num">03</span>
+              <blockquote class="b-voice-row__quote">
+                &ldquo;Your voice is not an instrument you play. It is you. That is what makes it terrifying — and
+                extraordinary.&rdquo;
+              </blockquote>
+              <a href="404.html" class="b-voice-row__link">Read full essay <span aria-hidden="true">&#8599;</span></a>
+            </div>
+            <div class="b-voice-row__rule" aria-hidden="true"></div>
+            <div class="b-voice-row__right">
+              <div class="b-voice-row__avatar">MS</div>
+              <div class="b-voice-row__bio">
+                <strong>Maya Sharma</strong>
+                <span>Vocal Arts</span>
+                <p>Classical soprano and vocal coach. Specialises in western lyric and jazz vocal technique.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 04 -->
+          <article class="b-voice-row" data-aos="fade-up" data-aos-delay="180">
+            <div class="b-voice-row__left">
+              <span class="b-voice-row__num">04</span>
+              <blockquote class="b-voice-row__quote">
+                &ldquo;Carnatic music does not ask you to replicate the past. It asks you to carry the past forward —
+                with your own breath in it.&rdquo;
+              </blockquote>
+              <a href="404.html" class="b-voice-row__link">Read full essay <span aria-hidden="true">&#8599;</span></a>
+            </div>
+            <div class="b-voice-row__rule" aria-hidden="true"></div>
+            <div class="b-voice-row__right">
+              <div class="b-voice-row__avatar">AN</div>
+              <div class="b-voice-row__bio">
+                <strong>Prof. Arjun Nair</strong>
+                <span>Carnatic Faculty</span>
+                <p>Performing vocalist and guru. Over two decades of concert and teaching experience in the Carnatic
+                  tradition.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 05 -->
+          <article class="b-voice-row" data-aos="fade-up" data-aos-delay="240">
+            <div class="b-voice-row__left">
+              <span class="b-voice-row__num">05</span>
+              <blockquote class="b-voice-row__quote">
+                &ldquo;A DAW is a brush. The producer is still the painter. Every tool is neutral — only taste is
+                not.&rdquo;
+              </blockquote>
+              <a href="404.html" class="b-voice-row__link">Read full essay <span aria-hidden="true">&#8599;</span></a>
+            </div>
+            <div class="b-voice-row__rule" aria-hidden="true"></div>
+            <div class="b-voice-row__right">
+              <div class="b-voice-row__avatar">LS</div>
+              <div class="b-voice-row__bio">
+                <strong>Dr. Leo Santos</strong>
+                <span>Music Production</span>
+                <p>Producer, mix engineer, and educator. Brings studio industry experience into the classroom.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== B8. THIS MONTH IN MUSIC — vertical timeline ===== -->
+    <section class="b-timeline" id="monthInMusic">
+      <div class="section-inner">
+        <div class="b-timeline__header" data-aos="fade-up">
+          <p class="eyebrow"><span class="eyebrow__dot"></span>Academy Calendar</p>
+          <h2 class="section-title">This month <em>in music.</em></h2>
+          <p class="section-sub">Recitals, masterclasses, open studios and community events — all in one place.</p>
+        </div>
+
+        <div class="b-timeline__body">
+
+          <!-- Month marker -->
+          <div class="b-tl-month" data-aos="fade-right">
+            <span>August 2026</span>
+          </div>
+
+          <div class="b-tl-entry" data-aos="fade-up" data-aos-delay="0">
+            <div class="b-tl-entry__date">
+              <strong>05</strong><span>Tue</span>
+            </div>
+            <div class="b-tl-entry__line" aria-hidden="true"></div>
+            <div class="b-tl-entry__body">
+              <span class="b-tl-tag b-tl-tag--recital">Recital</span>
+              <h4>Spring Showcase — Advanced Piano</h4>
+              <p>Advanced piano students perform selected works from Chopin, Debussy, and Ravel. Open to all families.
+              </p>
+            </div>
+          </div>
+
+          <div class="b-tl-entry" data-aos="fade-up" data-aos-delay="60">
+            <div class="b-tl-entry__date">
+              <strong>11</strong><span>Mon</span>
+            </div>
+            <div class="b-tl-entry__line" aria-hidden="true"></div>
+            <div class="b-tl-entry__body">
+              <span class="b-tl-tag b-tl-tag--masterclass">Masterclass</span>
+              <h4>Bow Arm Masterclass with Jonathan Reed</h4>
+              <p>An open workshop on string technique and resonance. Intermediate and advanced violinists welcome.</p>
+            </div>
+          </div>
+
+          <div class="b-tl-entry" data-aos="fade-up" data-aos-delay="120">
+            <div class="b-tl-entry__date">
+              <strong>17</strong><span>Sun</span>
+            </div>
+            <div class="b-tl-entry__line" aria-hidden="true"></div>
+            <div class="b-tl-entry__body">
+              <span class="b-tl-tag b-tl-tag--open">Open Studio</span>
+              <h4>Production Lab: Open Studio Day</h4>
+              <p>Prospective and current students explore the recording suite. Dr. Leo Santos leads informal Q&amp;A
+                sessions throughout.</p>
+            </div>
+          </div>
+
+          <div class="b-tl-entry" data-aos="fade-up" data-aos-delay="180">
+            <div class="b-tl-entry__date">
+              <strong>22</strong><span>Fri</span>
+            </div>
+            <div class="b-tl-entry__line" aria-hidden="true"></div>
+            <div class="b-tl-entry__body">
+              <span class="b-tl-tag b-tl-tag--lecture">Lecture</span>
+              <h4>Carnatic Fundamentals — Public Lecture Series</h4>
+              <p>Prof. Arjun Nair introduces the Carnatic system: swara, raga, and tala for curious listeners with no
+                prior background.</p>
+            </div>
+          </div>
+
+          <!-- Month marker -->
+          <div class="b-tl-month b-tl-month--next" data-aos="fade-right">
+            <span>September 2026</span>
+          </div>
+
+          <div class="b-tl-entry" data-aos="fade-up" data-aos-delay="0">
+            <div class="b-tl-entry__date">
+              <strong>03</strong><span>Thu</span>
+            </div>
+            <div class="b-tl-entry__line" aria-hidden="true"></div>
+            <div class="b-tl-entry__body">
+              <span class="b-tl-tag b-tl-tag--recital">Recital</span>
+              <h4>Junior Vocal Showcase</h4>
+              <p>Students aged 8–14 from the Junior Vocal program present solo and ensemble pieces from classical and
+                folk traditions.</p>
+            </div>
+          </div>
+
+          <div class="b-tl-entry" data-aos="fade-up" data-aos-delay="60">
+            <div class="b-tl-entry__date">
+              <strong>14</strong><span>Sun</span>
+            </div>
+            <div class="b-tl-entry__line" aria-hidden="true"></div>
+            <div class="b-tl-entry__body">
+              <span class="b-tl-tag b-tl-tag--masterclass">Masterclass</span>
+              <h4>Artist-in-Residence Session — Julian Hayes</h4>
+              <p>Grammy-nominated jazz pianist Julian Hayes leads a focused session on jazz improvisation and comping
+                technique.</p>
+            </div>
+          </div>
+
+        </div><!-- /.b-timeline__body -->
+
+        <div class="b-timeline__cta" data-aos="fade-up">
+          <a href="404.html" class="btn btn--line">View Full Calendar <i class="fas fa-arrow-right"
+              aria-hidden="true"></i></a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+
+    <div class="section-inner footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="brand brand--footer">
+          <img src="assets/images/stackly-logo.webp" alt="Stackly Music Academy"
+            class="brand__logo brand__logo--footer">
+        </a>
+        <p>A disciplined music education for pianists, vocalists, strings players and producers in Chennai.</p>
+        <div class="footer__social" aria-label="Social media">
+          <a href="404.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Courses</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Programs</h4>
+        <a href="404.html">Piano &amp; Keyboard</a>
+        <a href="404.html">Voice &amp; Vocal Technique</a>
+        <a href="404.html">Violin &amp; Guitar</a>
+        <a href="404.html">Percussion</a>
+        <a href="404.html">Music Production</a>
+      </div>
+
+      <div class="footer__col footer__col--newsletter">
+        <h4>Stay in tune</h4>
+        <p>Recital dates and audition news, once a month.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="text" placeholder="Your email" aria-label="Email address" inputmode="text">
+          <button type="submit" aria-label="Subscribe"> <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="section-inner footer__bottom">
+      <p>&copy; <span id="year"></span> Stackly Music Academy. All rights reserved.</p>
+      <p>Designed for musicians who show up on time.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/blog.js"></script>
+
+  <script>
+    // Bottom "Harmonia Journal" band keeps its own simple stub —
+    // separate from the mid-page bSubscribeForm handled in blog.js.
+    const jForm = document.getElementById('journalForm');
+    if (jForm) {
+      jForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const note = document.getElementById('journalNote');
+        const email = jForm.querySelector('input[type="email"]').value;
+        if (email) {
+          note.textContent = 'Thank you for subscribing to the Journal.';
+          jForm.reset();
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

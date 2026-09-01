@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Stackly Music Academy</title>
+<meta name="description" content="The page you're looking for doesn't exist. Return to Stackly Music Academy.">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+  /* ── Reset main padding (no header) ── */
+  main#top { padding-top: 0; }
+
+  /* ── Full-screen wrapper ── */
+  .nf-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  /* ── Background image + overlay ── */
+  .nf-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+  }
+
+  /* ── Decorative floating notes ── */
+  .nf-notes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .nf-notes span {
+    position: absolute;
+    font-size: 1.6rem;
+    color: var(--violet-light);
+    opacity: 0.25;
+    animation: nfFloat 6s ease-in-out infinite;
+  }
+  .nf-notes span:nth-child(1) { top: 12%; left:  8%; animation-delay: 0s;    font-size: 2rem; }
+  .nf-notes span:nth-child(2) { top: 22%; right: 10%; animation-delay: 1.2s; font-size: 1.3rem; }
+  .nf-notes span:nth-child(3) { bottom: 18%; left: 14%; animation-delay: 2.4s; }
+  .nf-notes span:nth-child(4) { bottom: 28%; right: 8%; animation-delay: 0.8s; font-size: 2.2rem; }
+  .nf-notes span:nth-child(5) { top: 55%; left: 50%; animation-delay: 3s;   font-size: 1.1rem; }
+
+  @keyframes nfFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%       { transform: translateY(-18px) rotate(6deg); }
+  }
+
+  /* ── Staff lines ── */
+  .nf-staff {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0.06;
+  }
+  .nf-staff svg { width: 100%; display: block; }
+
+  /* ── Content card ── */
+  .nf-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: clamp(40px, 6vw, 80px) clamp(24px, 6vw, 60px);
+    max-width: 560px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ── 404 number ── */
+  .nf-number {
+    font-family: var(--font-display);
+    font-size: clamp(7rem, 22vw, 14rem);
+    font-weight: 700;
+    line-height: 0.9;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--violet);
+    letter-spacing: -0.04em;
+    margin-bottom: 8px;
+    user-select: none;
+    position: relative;
+  }
+  /* Filled ghost layer behind */
+  .nf-number::before {
+    content: "404";
+    position: absolute;
+    inset: 0;
+    color: var(--violet);
+    opacity: 0.07;
+    -webkit-text-stroke: 0;
+  }
+
+  /* ── Eyebrow ── */
+  .nf-eyebrow {
+    font-family: var(--font-label);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--violet-light);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nf-eyebrow::before,
+  .nf-eyebrow::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--violet-dim);
+    opacity: 0.6;
+  }
+
+  /* ── Heading ── */
+  .nf-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 600;
+    color: var(--parchment);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .nf-title em {
+    font-style: italic;
+    color: var(--violet-light);
+  }
+
+  /* ── Sub text ── */
+  .nf-sub {
+    font-size: 0.98rem;
+    color: var(--parchment-dim);
+    opacity: 0.65;
+    line-height: 1.65;
+    max-width: 36ch;
+    margin: 0 auto 36px;
+  }
+
+  /* ── Divider line ── */
+  .nf-divider {
+    width: 48px;
+    height: 2px;
+    background: var(--violet);
+    border-radius: 2px;
+    margin: 0 auto 34px;
+    opacity: 0.7;
+  }
+
+  /* ── Buttons ── */
+  .nf-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-family: var(--font-label);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.3s var(--ease);
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .nf-btn--solid {
+    background: var(--violet);
+    color: var(--ink);
+    border: 2px solid var(--violet);
+  }
+  .nf-btn--solid:hover {
+    background: var(--violet-light);
+    border-color: var(--violet-light);
+  }
+
+  .nf-btn--outline {
+    background: transparent;
+    color: var(--parchment-dim);
+    border: 2px solid rgba(243,238,227,0.2);
+  }
+  .nf-btn--outline:hover {
+    border-color: var(--violet-dim);
+    color: var(--parchment);
+    background: rgba(184,134,60,0.08);
+  }
+
+  .nf-btn i { font-size: 0.65rem; }
+
+  /* ── Responsive ── */
+  @media (max-width: 480px) {
+    .nf-number { font-size: clamp(6rem, 28vw, 10rem); }
+    .nf-actions { flex-direction: column; align-items: center; width: 100%; }
+    .nf-btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<main id="top">
+  <div class="nf-page">
+
+    <!-- Background -->
+    <div class="nf-bg" aria-hidden="true"></div>
+
+    <!-- Staff lines -->
+    <div class="nf-staff" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <line x1="0" y1="20"  x2="1200" y2="20"  stroke="var(--violet-light)" stroke-width="1"/>
+        <line x1="0" y1="40"  x2="1200" y2="40"  stroke="var(--violet-light)" stroke-width="1"/>
+        <line x1="0" y1="60"  x2="1200" y2="60"  stroke="var(--violet-light)" stroke-width="1"/>
+        <line x1="0" y1="80"  x2="1200" y2="80"  stroke="var(--violet-light)" stroke-width="1"/>
+        <line x1="0" y1="100" x2="1200" y2="100" stroke="var(--violet-light)" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- Floating notes -->
+    <div class="nf-notes" aria-hidden="true">
+      <span>&#9834;</span>
+      <span>&#9835;</span>
+      <span>&#9836;</span>
+      <span>&#9833;</span>
+      <span>&#9834;</span>
+    </div>
+
+    <!-- Main content -->
+    <div class="nf-content">
+      <div class="nf-number" aria-hidden="true">404</div>
+
+      <p class="nf-eyebrow">Page not found</p>
+
+      <h1 class="nf-title">This page slipped<br><em>off the score.</em></h1>
+
+      <div class="nf-divider"></div>
+
+      <p class="nf-sub">The page you were looking for has been moved, renamed, or never existed. Let's get you back on tempo.</p>
+
+      <div class="nf-actions">
+        <a href="javascript:history.back()" class="nf-btn nf-btn--outline">
+          <i class="fas fa-arrow-left"></i> Go Back
+        </a>
+        <a href="index.html" class="nf-btn nf-btn--solid">
+          Back to Home <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

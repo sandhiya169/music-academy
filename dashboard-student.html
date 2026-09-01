@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard — Cadence Conservatory</title>
+  <meta name="description" content="Your classes, schedule and payments at Cadence Conservatory.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+
+<body class="dash-body">
+
+  <!-- ===== Mobile top bar ===== -->
+  <div class="dash-mobile-bar">
+    <a href="index.html" class="brand">
+      <img src="assets/images/stackly-logo.webp" alt="Cadence Conservatory" class="brand__logo brand__logo--light">
+    </a>
+    <button class="dash-mobile-toggle" id="dashMobileToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="dash-overlay" id="dashOverlay"></div>
+
+  <div class="dash-shell">
+
+    <!-- ===== Sidebar ===== -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <a href="index.html" class="brand dash-sidebar__brand">
+        <img src="assets/images/stackly-logo.webp" alt="Cadence Conservatory" class="brand__logo brand__logo--light">
+      </a>
+
+      <div class="dash-sidebar__user">
+        <i class="fas fa-circle-user" aria-hidden="true"></i>
+        <span id="dashSidebarEmail" class="dash-sidebar__user-email">—</span>
+      </div>
+
+      <p class="dash-sidebar__label">Student Portal</p>
+      <nav class="dash-nav" aria-label="Dashboard sections">
+        <button type="button" class="dash-nav__item is-active" data-panel-target="panelOverview"
+          data-title="Welcome back, <em>User.</em>"
+          data-desc="Here's what's happening across your programs this week.">
+          <span class="dash-nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3" y="3" width="8" height="8" rx="1.5" />
+              <rect x="13" y="3" width="8" height="8" rx="1.5" />
+              <rect x="3" y="13" width="8" height="8" rx="1.5" />
+              <rect x="13" y="13" width="8" height="8" rx="1.5" />
+            </svg></span>
+          Overview
+        </button>
+        <button type="button" class="dash-nav__item" data-panel-target="panelClasses" data-title="My <em>Classes.</em>"
+          data-desc="Everything you're currently enrolled in, and who's teaching it.">
+          <span class="dash-nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M4 19V5a2 2 0 0 1 2-2h11l3 3v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+              <path d="M9 8h7M9 12h7M9 16h4" />
+            </svg></span>
+          My Classes
+        </button>
+        <button type="button" class="dash-nav__item" data-panel-target="panelSchedule"
+          data-title="Weekly <em>Schedule.</em>" data-desc="Your lesson times for the current term, at a glance.">
+          <span class="dash-nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3" y="4" width="18" height="17" rx="2" />
+              <path d="M3 9h18M8 2v4M16 2v4" />
+            </svg></span>
+          Schedule
+        </button>
+        <button type="button" class="dash-nav__item" data-panel-target="panelPayments"
+          data-title="Payments &amp; <em>Invoices.</em>"
+          data-desc="Track tuition, recital fees and receipts in one place.">
+          <span class="dash-nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <path d="M2 10h20M6 15h4" />
+            </svg></span>
+          Payments
+        </button>
+      </nav>
+
+      <div class="dash-sidebar__spacer"></div>
+
+      <div class="dash-sidebar__foot">
+        <a href="index.html" class="dash-nav__item">
+          <span class="dash-nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M3 11.5 12 4l9 7.5" />
+              <path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9" />
+            </svg></span>
+          Back to Home
+        </a>
+        <a href="login.html" class="dash-nav__item dash-nav__item--logout">
+          <span class="dash-nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <path d="M16 17l5-5-5-5" />
+              <path d="M21 12H9" />
+            </svg></span>
+          Log Out
+        </a>
+      </div>
+    </aside>
+
+    <!-- ===== Main content ===== -->
+    <main class="dash-main">
+      <div class="dash-header">
+        <div>
+          <p class="eyebrow"><span class="eyebrow__dot"></span>Student Portal</p>
+          <h1 id="dashPageTitle">Welcome back, <em>User.</em></h1>
+          <p id="dashPageDesc">Here's what's happening across your programs this week.</p>
+        </div>
+        <div class="dash-header__meta">
+          <div class="dash-user-email">
+          <span class="dash-avatar-circle">U</span>
+          <span id="dashUserEmailChip" class="dash-user-email__text">—</span>
+        </div>
+          Piano &amp; Voice Program<br>Student ID CC-24118
+        </div>
+      </div>
+
+      <!-- ===== Overview ===== -->
+      <section class="dash-panel is-active" id="panelOverview">
+        <div class="dash-stats">
+          <div class="dash-stat">
+            <p class="dash-stat__label">Enrolled Programs</p>
+            <p class="dash-stat__value">2</p>
+            <p class="dash-stat__delta dash-stat__delta--flat">Piano &middot; Voice</p>
+          </div>
+          <div class="dash-stat">
+            <p class="dash-stat__label">Attendance Rate</p>
+            <p class="dash-stat__value">94%</p>
+            <p class="dash-stat__delta">&uarr; 3% this term</p>
+          </div>
+          <div class="dash-stat">
+            <p class="dash-stat__label">Next Recital</p>
+            <p class="dash-stat__value">Sep 12</p>
+            <p class="dash-stat__delta dash-stat__delta--flat">Autumn Recital</p>
+          </div>
+          <div class="dash-stat">
+            <p class="dash-stat__label">Pending Invoices</p>
+            <p class="dash-stat__value">1</p>
+            <p class="dash-stat__delta dash-stat__delta--flat">Due Sep 05</p>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Quick actions</h2>
+              <p>Common tasks, one tap away.</p>
+            </div>
+          </div>
+          <div class="dash-actions">
+            <button type="button" class="btn btn--solid js-stub">Book a Trial Class</button>
+            <button type="button" class="btn btn--line js-stub">Message Faculty</button>
+            <button type="button" class="btn btn--line js-stub">Download Certificate</button>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Recent activity</h2>
+              <p>Updates from your faculty and the front office.</p>
+            </div>
+          </div>
+          <div class="dash-rows">
+            <div class="dash-row">
+              <div class="dash-row__avatar">AV</div>
+              <div>
+                <p class="dash-row__title">Arjun Vasudev left feedback on your bowing exercise</p>
+                <p class="dash-row__sub">Strings &middot; 2 days ago</p>
+              </div>
+              <span class="dash-row__tag">Feedback</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">View</button>
+            </div>
+            <div class="dash-row">
+              <div class="dash-row__avatar">DM</div>
+              <div>
+                <p class="dash-row__title">Divya Menon rescheduled Thursday's voice lesson</p>
+                <p class="dash-row__sub">Voice &middot; 4 days ago</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--due">Rescheduled</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">View</button>
+            </div>
+            <div class="dash-row">
+              <div class="dash-row__avatar">FO</div>
+              <div>
+                <p class="dash-row__title">Autumn Recital seating confirmation is now open</p>
+                <p class="dash-row__sub">Front Office &middot; 6 days ago</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">Action needed</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">View</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Program progress</h2>
+              <p>Your grade advancement this term.</p>
+            </div>
+          </div>
+          <div class="dash-progress-list">
+            <div class="dash-progress-item">
+              <div class="dash-progress-item__top">
+                <span class="dash-progress-item__name">Piano — Intermediate Grade 4</span>
+                <span class="dash-progress-item__pct">72%</span>
+              </div>
+              <div class="dash-progress-bar">
+                <div class="dash-progress-bar__fill" style="width:72%"></div>
+              </div>
+              <span class="dash-progress-item__note">3 of 4 modules complete</span>
+            </div>
+            <div class="dash-progress-item">
+              <div class="dash-progress-item__top">
+                <span class="dash-progress-item__name">Western Voice — Foundation</span>
+                <span class="dash-progress-item__pct">45%</span>
+              </div>
+              <div class="dash-progress-bar">
+                <div class="dash-progress-bar__fill dash-progress-bar__fill--voice" style="width:45%"></div>
+              </div>
+              <span class="dash-progress-item__note">Module 2 in progress</span>
+            </div>
+            <div class="dash-progress-item">
+              <div class="dash-progress-item__top">
+                <span class="dash-progress-item__name">Music Theory — Term Assessment</span>
+                <span class="dash-progress-item__pct">88%</span>
+              </div>
+              <div class="dash-progress-bar">
+                <div class="dash-progress-bar__fill dash-progress-bar__fill--theory" style="width:88%"></div>
+              </div>
+              <span class="dash-progress-item__note">Exam scheduled Sep 18</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Recitals -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Upcoming recitals</h2>
+              <p>Your performance dates this term.</p>
+            </div>
+            <button type="button" class="btn btn--line btn--sm js-stub">View All</button>
+          </div>
+          <div class="dash-event-list">
+            <div class="dash-event">
+              <div class="dash-event__date">
+                <span class="dash-event__day">12</span>
+                <span class="dash-event__mon">Sep</span>
+              </div>
+              <div class="dash-event__body">
+                <p class="dash-event__title">Autumn Recital 2026</p>
+                <p class="dash-event__meta">6:00 PM &middot; Main Auditorium &middot; Piano &amp; Voice</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">Confirmed</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Details</button>
+            </div>
+            <div class="dash-event">
+              <div class="dash-event__date">
+                <span class="dash-event__day">04</span>
+                <span class="dash-event__mon">Nov</span>
+              </div>
+              <div class="dash-event__body">
+                <p class="dash-event__title">Winter Term Showcase</p>
+                <p class="dash-event__meta">5:30 PM &middot; Studio Theatre &middot; All Programs</p>
+              </div>
+              <span class="dash-row__tag">Registration open</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Register</button>
+            </div>
+            <div class="dash-event">
+              <div class="dash-event__date">
+                <span class="dash-event__day">20</span>
+                <span class="dash-event__mon">Dec</span>
+              </div>
+              <div class="dash-event__body">
+                <p class="dash-event__title">Year-End Grand Concert</p>
+                <p class="dash-event__meta">7:00 PM &middot; Main Auditorium &middot; All Programs</p>
+              </div>
+              <span class="dash-row__tag">Upcoming</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Details</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== My Classes ===== -->
+      <section class="dash-panel" id="panelClasses">
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Currently enrolled</h2>
+              <p>Two programs this term.</p>
+            </div>
+            <button type="button" class="btn btn--solid btn--sm js-stub">Browse More Programs</button>
+          </div>
+          <div class="dash-rows">
+            <div class="dash-row">
+              <div class="dash-row__avatar">PN</div>
+              <div>
+                <p class="dash-row__title">Piano — Intermediate Grade 4</p>
+                <p class="dash-row__sub">Priya N., Piano Faculty &middot; Tue &amp; Thu, 5:00 PM</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">In progress</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Class Details</button>
+            </div>
+            <div class="dash-row">
+              <div class="dash-row__avatar">DM</div>
+              <div>
+                <p class="dash-row__title">Western Voice — Foundation</p>
+                <p class="dash-row__sub">Divya Menon, Head of Voice &middot; Mon &amp; Fri, 6:30 PM</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">In progress</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Class Details</button>
+            </div>
+            <div class="dash-row">
+              <div class="dash-row__avatar">RF</div>
+              <div>
+                <p class="dash-row__title">Music Production — Intro Workshop</p>
+                <p class="dash-row__sub">Rohan Fernandes, Head of Production &middot; Starts Oct 04</p>
+              </div>
+              <span class="dash-row__tag">Waitlisted</span>
+              <button type="button" class="btn btn--line btn--sm js-stub dash-row__action">Join Waitlist</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Assignments & Homework -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Assignments &amp; practice tasks</h2>
+              <p>Set by your faculty this week.</p>
+            </div>
+            <button type="button" class="btn btn--line btn--sm js-stub">View All</button>
+          </div>
+          <div class="dash-checklist">
+            <label class="dash-check-item">
+              <input type="checkbox">
+              <div class="dash-check-item__body">
+                <span class="dash-check-item__title">Hanon Exercise 1–5 — left hand focus</span>
+                <span class="dash-check-item__meta">Piano &middot; Due Thu, Sep 4</span>
+              </div>
+              <span class="dash-row__tag dash-row__tag--due">Pending</span>
+            </label>
+            <label class="dash-check-item">
+              <input type="checkbox" checked>
+              <div class="dash-check-item__body">
+                <span class="dash-check-item__title">Scales in F major — 4 octaves, 120 bpm</span>
+                <span class="dash-check-item__meta">Piano &middot; Due Tue, Sep 2</span>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">Done</span>
+            </label>
+            <label class="dash-check-item">
+              <input type="checkbox">
+              <div class="dash-check-item__body">
+                <span class="dash-check-item__title">Lip trill warmup — 10 minutes daily</span>
+                <span class="dash-check-item__meta">Voice &middot; Ongoing</span>
+              </div>
+              <span class="dash-row__tag dash-row__tag--due">Pending</span>
+            </label>
+            <label class="dash-check-item">
+              <input type="checkbox" checked>
+              <div class="dash-check-item__body">
+                <span class="dash-check-item__title">Record and submit sight-reading excerpt</span>
+                <span class="dash-check-item__meta">Voice &middot; Due Mon, Sep 1</span>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">Submitted</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Faculty Notes -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Faculty notes</h2>
+              <p>Written feedback from your last lessons.</p>
+            </div>
+          </div>
+          <div class="dash-note-list">
+            <div class="dash-faculty-note">
+              <div class="dash-faculty-note__header">
+                <div class="dash-row__avatar" style="width:36px;height:36px;font-size:0.75rem">PN</div>
+                <div>
+                  <p class="dash-faculty-note__name">Priya Nair — Piano</p>
+                  <p class="dash-faculty-note__date">Aug 29, 2026</p>
+                </div>
+              </div>
+              <p class="dash-faculty-note__text">"Good control on the right hand this session. The left hand still
+                anticipates the beat slightly — focus on isolating it during home practice before Thursday."</p>
+            </div>
+            <div class="dash-faculty-note">
+              <div class="dash-faculty-note__header">
+                <div class="dash-row__avatar" style="width:36px;height:36px;font-size:0.75rem">DM</div>
+                <div>
+                  <p class="dash-faculty-note__name">Divya Menon — Voice</p>
+                  <p class="dash-faculty-note__date">Aug 27, 2026</p>
+                </div>
+              </div>
+              <p class="dash-faculty-note__text">"Strong improvement on breath support. Watch the jaw tension on the
+                upper passaggio — keep the exercise sheet I gave you and do it before every practice session."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Schedule ===== -->
+      <section class="dash-panel" id="panelSchedule">
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>This week</h2>
+              <p>Aug 25 &ndash; Aug 31, 2026</p>
+            </div>
+            <button type="button" class="btn btn--line btn--sm js-stub">Add to Calendar</button>
+          </div>
+          <div class="dash-table-wrap">
+            <div class="dash-timetable">
+              <div class="dash-timetable__head">Time</div>
+              <div class="dash-timetable__head">Mon</div>
+              <div class="dash-timetable__head">Tue</div>
+              <div class="dash-timetable__head">Wed</div>
+              <div class="dash-timetable__head">Thu</div>
+              <div class="dash-timetable__head">Fri</div>
+              <div class="dash-timetable__head">Sat</div>
+              <div class="dash-timetable__head">Sun</div>
+              <div class="dash-timetable__time">5:00 PM</div>
+              <div class="dash-timetable__cell"></div>
+              <div class="dash-timetable__cell">
+                <div class="dash-timetable__event">Piano<span>Studio 3</span></div>
+              </div>
+              <div class="dash-timetable__cell"></div>
+              <div class="dash-timetable__cell">
+                <div class="dash-timetable__event">Piano<span>Studio 3</span></div>
+              </div>
+              <div class="dash-timetable__cell"></div>
+              <div class="dash-timetable__cell"></div>
+              <div class="dash-timetable__cell"></div>
+              <div class="dash-timetable__time">6:30 PM</div>
+              <div class="dash-timetable__cell">
+                <div class="dash-timetable__event">Voice<span>Room 5</span></div>
+              </div>
+              <div class="dash-timetable__cell"></div>
+              <div class="dash-timetable__cell"></div>
+              <div class="dash-timetable__cell"></div>
+              <div class="dash-timetable__cell">
+                <div class="dash-timetable__event">Voice<span>Room 5</span></div>
+              </div>
+              <div class="dash-timetable__cell"></div>
+              <div class="dash-timetable__cell"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming events -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Upcoming events</h2>
+              <p>Important dates and studio events this term.</p>
+            </div>
+          </div>
+          <div class="dash-event-list">
+            <div class="dash-event">
+              <div class="dash-event__date">
+                <span class="dash-event__day">05</span>
+                <span class="dash-event__mon">Sep</span>
+              </div>
+              <div class="dash-event__body">
+                <p class="dash-event__title">Tuition payment due</p>
+                <p class="dash-event__meta">Front Office &middot; Invoice INV-2026-081</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--due">Due soon</span>
+            </div>
+            <div class="dash-event">
+              <div class="dash-event__date">
+                <span class="dash-event__day">12</span>
+                <span class="dash-event__mon">Sep</span>
+              </div>
+              <div class="dash-event__body">
+                <p class="dash-event__title">Autumn Recital 2026</p>
+                <p class="dash-event__meta">6:00 PM &middot; Main Auditorium</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">Confirmed</span>
+            </div>
+            <div class="dash-event">
+              <div class="dash-event__date">
+                <span class="dash-event__day">18</span>
+                <span class="dash-event__mon">Sep</span>
+              </div>
+              <div class="dash-event__body">
+                <p class="dash-event__title">Music Theory Assessment</p>
+                <p class="dash-event__meta">4:00 PM &middot; Room 2</p>
+              </div>
+              <span class="dash-row__tag">Exam</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leave Request -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Request a leave</h2>
+              <p>Notify your faculty of an upcoming absence.</p>
+            </div>
+          </div>
+          <form class="dash-leave-form" id="leaveRequestForm" novalidate>
+            <div class="dash-leave-form__row">
+              <div class="dash-form-group" id="fg-program">
+                <label for="leaveProgram">Program</label>
+                <select id="leaveProgram" name="leaveProgram">
+                  <option value="">— Select a program —</option>
+                  <option value="piano">Piano — Intermediate Grade 4</option>
+                  <option value="voice">Western Voice — Foundation</option>
+                </select>
+                <span class="dash-field-error" id="err-program" aria-live="polite"></span>
+              </div>
+              <div class="dash-form-group" id="fg-date">
+                <label for="leaveDate">Date of absence</label>
+                <input type="date" id="leaveDate" name="leaveDate">
+                <span class="dash-field-error" id="err-date" aria-live="polite"></span>
+              </div>
+            </div>
+            <div class="dash-form-group">
+              <label for="leaveReason">Reason <span class="dash-form-optional">(optional)</span></label>
+              <textarea id="leaveReason" name="leaveReason" rows="2" placeholder="e.g. School exam, travel..." maxlength="300"></textarea>
+              <span class="dash-field-hint" id="hint-reason">0 / 300</span>
+            </div>
+            <div class="dash-leave-form__footer">
+              <span class="dash-form-success" id="leaveSuccess" aria-live="polite"></span>
+              <button type="submit" class="btn btn--solid" id="leaveSubmitBtn">Submit Leave Request</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ===== Payments ===== -->
+      <section class="dash-panel" id="panelPayments">
+
+        <!-- Summary strip -->
+        <div class="dash-pay-summary">
+          <div class="dash-pay-summary__item">
+            <span class="dash-pay-summary__label">Total paid this year</span>
+            <span class="dash-pay-summary__value">&#8377;38,500</span>
+          </div>
+          <div class="dash-pay-summary__item dash-pay-summary__item--due">
+            <span class="dash-pay-summary__label">Outstanding balance</span>
+            <span class="dash-pay-summary__value">&#8377;18,000</span>
+          </div>
+          <div class="dash-pay-summary__item">
+            <span class="dash-pay-summary__label">Next due date</span>
+            <span class="dash-pay-summary__value">Sep 05</span>
+          </div>
+          <div class="dash-pay-summary__item">
+            <span class="dash-pay-summary__label">Payment method</span>
+            <span class="dash-pay-summary__value">UPI / Card</span>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Invoices</h2>
+              <p>Tuition and recital fees.</p>
+            </div>
+            <button type="button" class="btn btn--line btn--sm js-stub">Download All Receipts</button>
+          </div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Invoice</th>
+                  <th>Program</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>INV-2026-081</td>
+                  <td>Piano &amp; Voice — Term 3</td>
+                  <td>&#8377;18,000</td>
+                  <td><span class="dash-row__tag dash-row__tag--due">Due Sep 05</span></td>
+                  <td><button type="button" class="btn btn--solid btn--sm js-stub">Pay Now</button></td>
+                </tr>
+                <tr>
+                  <td>INV-2026-054</td>
+                  <td>Piano &amp; Voice — Term 2</td>
+                  <td>&#8377;18,000</td>
+                  <td><span class="dash-row__tag dash-row__tag--live">Paid</span></td>
+                  <td><button type="button" class="btn btn--line btn--sm js-stub">Receipt</button></td>
+                </tr>
+                <tr>
+                  <td>INV-2026-021</td>
+                  <td>Registration Fee</td>
+                  <td>&#8377;2,500</td>
+                  <td><span class="dash-row__tag dash-row__tag--live">Paid</span></td>
+                  <td><button type="button" class="btn btn--line btn--sm js-stub">Receipt</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Payment history timeline -->
+        <div class="dash-card">
+          <div class="dash-card__head">
+            <div>
+              <h2>Payment history</h2>
+              <p>All transactions this enrollment year.</p>
+            </div>
+          </div>
+          <div class="dash-timeline">
+            <div class="dash-timeline__item">
+              <div class="dash-timeline__dot dash-timeline__dot--due"></div>
+              <div class="dash-timeline__content">
+                <p class="dash-timeline__title">&#8377;18,000 due — Term 3 Tuition</p>
+                <p class="dash-timeline__meta">Due Sep 05, 2026 &middot; INV-2026-081</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--due">Pending</span>
+            </div>
+            <div class="dash-timeline__item">
+              <div class="dash-timeline__dot"></div>
+              <div class="dash-timeline__content">
+                <p class="dash-timeline__title">&#8377;18,000 paid — Term 2 Tuition</p>
+                <p class="dash-timeline__meta">Paid May 02, 2026 &middot; UPI</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">Paid</span>
+            </div>
+            <div class="dash-timeline__item">
+              <div class="dash-timeline__dot"></div>
+              <div class="dash-timeline__content">
+                <p class="dash-timeline__title">&#8377;18,000 paid — Term 1 Tuition</p>
+                <p class="dash-timeline__meta">Paid Jan 10, 2026 &middot; Card</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">Paid</span>
+            </div>
+            <div class="dash-timeline__item">
+              <div class="dash-timeline__dot"></div>
+              <div class="dash-timeline__content">
+                <p class="dash-timeline__title">&#8377;2,500 paid — Registration Fee</p>
+                <p class="dash-timeline__meta">Paid Jan 03, 2026 &middot; UPI</p>
+              </div>
+              <span class="dash-row__tag dash-row__tag--live">Paid</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>
