@@ -239,7 +239,7 @@
   text-align: right;
 }
 .dash-user-email__text::before {
-  content: "User";
+  content: "Admin";
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--parchment);
