@@ -164,6 +164,34 @@
     <!-- ===== MARQUEE ===== -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track" id="marqueeTrack">
+        <!-- First set -->
+        <span>Piano</span><span class="marquee__sep">&#9835;</span>
+        <span>Carnatic &amp; Western Voice</span><span class="marquee__sep">&#9835;</span>
+        <span>Violin</span><span class="marquee__sep">&#9835;</span>
+        <span>Guitar</span><span class="marquee__sep">&#9835;</span>
+        <span>Drums &amp; Tabla</span><span class="marquee__sep">&#9835;</span>
+        <span>Music Production</span><span class="marquee__sep">&#9835;</span>
+        <span>Theory &amp; Composition</span><span class="marquee__sep">&#9835;</span>
+        
+        <!-- Duplicated set for seamless loop -->
+        <span>Piano</span><span class="marquee__sep">&#9835;</span>
+        <span>Carnatic &amp; Western Voice</span><span class="marquee__sep">&#9835;</span>
+        <span>Violin</span><span class="marquee__sep">&#9835;</span>
+        <span>Guitar</span><span class="marquee__sep">&#9835;</span>
+        <span>Drums &amp; Tabla</span><span class="marquee__sep">&#9835;</span>
+        <span>Music Production</span><span class="marquee__sep">&#9835;</span>
+        <span>Theory &amp; Composition</span><span class="marquee__sep">&#9835;</span>
+
+        <!-- Triple set just in case of very wide screens -->
+        <span>Piano</span><span class="marquee__sep">&#9835;</span>
+        <span>Carnatic &amp; Western Voice</span><span class="marquee__sep">&#9835;</span>
+        <span>Violin</span><span class="marquee__sep">&#9835;</span>
+        <span>Guitar</span><span class="marquee__sep">&#9835;</span>
+        <span>Drums &amp; Tabla</span><span class="marquee__sep">&#9835;</span>
+        <span>Music Production</span><span class="marquee__sep">&#9835;</span>
+        <span>Theory &amp; Composition</span><span class="marquee__sep">&#9835;</span>
+
+        <!-- Quadruple set to ensure no gaps ever on ultra-wides -->
         <span>Piano</span><span class="marquee__sep">&#9835;</span>
         <span>Carnatic &amp; Western Voice</span><span class="marquee__sep">&#9835;</span>
         <span>Violin</span><span class="marquee__sep">&#9835;</span>
@@ -181,7 +209,7 @@
         <h2 class="courses__heading" data-reveal>Six disciplines.<br><em>One standard.</em></h2>
       </div>
       <ul class="courses__list" id="coursesList">
-        <li class="courses__row" data-img="assets/images/image-7.webp">
+        <li class="courses__row" data-img="assets/images/image-7.webp" data-reveal>
           <div class="courses__row-inner section-inner">
             <span class="courses__num">01</span>
             <h3 class="courses__name">Piano</h3>
@@ -192,7 +220,7 @@
             <img src="assets/images/image-7.webp" alt="">
           </div>
         </li>
-        <li class="courses__row" data-img="assets/images/image-10.webp">
+        <li class="courses__row" data-img="assets/images/image-10.webp" data-reveal>
           <div class="courses__row-inner section-inner">
             <span class="courses__num">02</span>
             <h3 class="courses__name">Voice</h3>
@@ -203,7 +231,7 @@
             <img src="assets/images/image-10.webp" alt="">
           </div>
         </li>
-        <li class="courses__row" data-img="assets/images/image-1.webp">
+        <li class="courses__row" data-img="assets/images/image-1.webp" data-reveal>
           <div class="courses__row-inner section-inner">
             <span class="courses__num">03</span>
             <h3 class="courses__name">Violin</h3>
@@ -214,7 +242,7 @@
             <img src="assets/images/image-1.webp" alt="">
           </div>
         </li>
-        <li class="courses__row" data-img="assets/images/image-2.webp">
+        <li class="courses__row" data-img="assets/images/image-2.webp" data-reveal>
           <div class="courses__row-inner section-inner">
             <span class="courses__num">04</span>
             <h3 class="courses__name">Guitar</h3>
@@ -225,7 +253,7 @@
             <img src="assets/images/image-2.webp" alt="">
           </div>
         </li>
-        <li class="courses__row" data-img="assets/images/image-12.webp">
+        <li class="courses__row" data-img="assets/images/image-12.webp" data-reveal>
           <div class="courses__row-inner section-inner">
             <span class="courses__num">05</span>
             <h3 class="courses__name">Drums</h3>
@@ -236,7 +264,7 @@
             <img src="assets/images/image-12.webp" alt="">
           </div>
         </li>
-        <li class="courses__row" data-img="assets/images/image-14.webp">
+        <li class="courses__row" data-img="assets/images/image-14.webp" data-reveal>
           <div class="courses__row-inner section-inner">
             <span class="courses__num">06</span>
             <h3 class="courses__name">Theory</h3>
@@ -253,7 +281,7 @@
     <!-- ===== 04. WHY STACKLY — split mosaic ===== -->
     <section class="split" id="whyus">
       <!-- Left: photo mosaic grid -->
-      <div class="split__mosaic" aria-hidden="true">
+      <div class="split__mosaic" aria-hidden="true" data-reveal>
         <div class="split__tile split__tile--1">
           <img src="assets/images/image-11.webp" alt="">
         </div>
@@ -275,8 +303,8 @@
 
       <!-- Right: editorial content -->
       <div class="split__body">
-        <p class="eyebrow"><span class="eyebrow__dot"></span>Why Stackly</p>
-        <h2 class="split__heading">A different kind of<br><em>music education.</em></h2>
+        <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span>Why Stackly</p>
+        <h2 class="split__heading" data-reveal>A different kind of<br><em>music education.</em></h2>
 
         <ul class="split__pillars">
           <li class="split__pillar" data-reveal>
@@ -398,7 +426,7 @@
     <section class="testi" id="testimonials">
       <div class="testi__inner section-inner">
         <p class="eyebrow eyebrow--light" data-reveal><span class="eyebrow__dot"></span>What students say</p>
-        <div class="testi__slider" id="testimonialSlider">
+        <div class="testi__slider" id="testimonialSlider" data-reveal>
           <span class="testi__mark" aria-hidden="true">&ldquo;</span>
           <blockquote class="testimonial is-active">
             <p>My daughter went from refusing to touch the piano to performing a Chopin nocturne at the winter recital. The weekly structure here is what did it.</p>
