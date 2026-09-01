@@ -383,8 +383,7 @@ function initContactFormGsap(){
     programWrap.querySelectorAll('.c-custom-select__option').forEach(opt => {
       opt.addEventListener('click', () => {
         programWrap.classList.remove('has-error');
-        const errEl = programWrap.querySelector('.c-field-error');
-        if (errEl) errEl.textContent = '';
+        programWrap.querySelectorAll('.c-field-error').forEach(el => el.remove());
       });
     });
   }
@@ -434,27 +433,21 @@ function initContactFormGsap(){
     // Program (custom select)
     const programInput = form.querySelector('#cProgram');
     const selectWrap   = document.getElementById('cProgramSelect');
-    if (!programInput.value) {
-      if (selectWrap) showError(selectWrap.querySelector('.c-custom-select__trigger') || selectWrap, 'Please select a program.');
-      // attach error to the wrapper itself
-      selectWrap && selectWrap.classList.add('has-error');
-      let errEl = selectWrap && selectWrap.querySelector('.c-field-error');
-      if (selectWrap && !errEl) {
-        errEl = document.createElement('span');
+    if (selectWrap) {
+      // Remove any stale duplicate error elements first
+      selectWrap.querySelectorAll('.c-field-error').forEach(el => el.remove());
+
+      if (!programInput.value) {
+        selectWrap.classList.add('has-error');
+        const errEl = document.createElement('span');
         errEl.className = 'c-field-error';
         errEl.setAttribute('role', 'alert');
         errEl.textContent = 'Please select a program of interest.';
         selectWrap.appendChild(errEl);
         if (hasGsap) gsap.fromTo(errEl, { opacity: 0, y: -4 }, { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out' });
-      } else if (errEl) {
-        errEl.textContent = 'Please select a program of interest.';
-      }
-      valid = false;
-    } else {
-      if (selectWrap) {
+        valid = false;
+      } else {
         selectWrap.classList.remove('has-error');
-        const errEl = selectWrap.querySelector('.c-field-error');
-        if (errEl) errEl.textContent = '';
       }
     }
 
@@ -503,17 +496,22 @@ function initContactFormGsap(){
         o.classList.remove('is-selected');
         o.setAttribute('aria-selected', 'false');
       });
-      const errEl = selectWrap.querySelector('.c-field-error');
-      if (errEl) errEl.textContent = '';
+      selectWrap.querySelectorAll('.c-field-error').forEach(el => el.remove());
     }
 
     // Clear all inline errors
-    form.querySelectorAll('.c-field-error').forEach(el => { el.textContent = ''; });
+    form.querySelectorAll('.c-field-error').forEach(el => el.remove());
     form.querySelectorAll('.has-error').forEach(el => el.classList.remove('has-error'));
 
-    // Redirect to 404 page after a short delay (so animation is visible)
+    // Redirect to 404 page after a short delay (so animation is visible).
+    // Always re-enable the button so the form stays usable if navigation fails.
     setTimeout(() => {
       window.location.href = '404.html';
+      // Re-enable after a further tick in case redirect doesn't fire (e.g. local dev)
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.classList.remove('is-sent');
+      }, 100);
     }, 600);
   });
 }

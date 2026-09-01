@@ -1693,7 +1693,7 @@ svg {
   grid-template-columns: 80px 1fr auto;
   align-items: center;
   gap: clamp(16px, 3vw, 48px);
-  padding: clamp(20px, 3vw, 32px) 0;
+  padding: clamp(20px, 3vw, 32px) 15px;
   border-bottom: 1px solid var(--line);
   transition: padding-left 0.3s, background 0.3s;
 }
@@ -2839,7 +2839,11 @@ svg {
   }
 
   .courses__cta {
-    display: none;
+    display: inline-flex;
+    opacity: 1;
+    transform: translateX(0);
+    grid-column: 2 / -1;
+    justify-self: end;
   }
 
   .fac__row {
@@ -2865,7 +2869,10 @@ svg {
   }
 
   .events__link {
-    display: none;
+    display: inline-flex;
+    opacity: 1;
+    grid-column: 2 / -1;
+    justify-self: end;
   }
 
   .split__mosaic {

@@ -295,6 +295,7 @@
 .c-form-slots { display: flex; flex-wrap: wrap; gap: 10px; }
 .c-form-slots legend { flex-basis: 100%; }
 .c-slot {
+  position: relative;
   display: inline-flex; align-items: center; gap: 8px;
   padding: 9px 18px;
   border: 1.5px solid var(--line);
@@ -303,7 +304,7 @@
   color: var(--charcoal); cursor: pointer;
   transition: border-color 0.25s, background 0.25s, color 0.25s;
 }
-.c-slot input { position: absolute; opacity: 0; pointer-events: none; }
+.c-slot input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
 .c-slot:has(input:checked) {
   background: var(--ink); color: var(--parchment);
   border-color: var(--ink);
